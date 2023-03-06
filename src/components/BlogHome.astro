@@ -1,0 +1,176 @@
+---
+import BlogCart from "./BlogCart.astro";
+const BlogHome = [
+  {
+    title: "Tytuł lorem ipsum dolor",
+    date: "14.06.2022",
+    short:
+      "Lorem ipsum dolor sit lorem  amet, consectetur adipiscing elit. Lorem ipsum dolor sit lorem  amet, consectetur adipiscing elit. ",
+    link: "/",
+    img: "/assets/blog-home-1.png",
+  },
+  {
+    title: "Tytuł lorem ipsum dolor",
+    date: "14.06.2022",
+    short:
+      "Lorem ipsum dolor sit lorem  amet, consectetur adipiscing elit. Lorem ipsum dolor sit lorem  amet, consectetur adipiscing elit. ",
+    link: "/",
+    img: "/assets/blog-home-2.png",
+  },
+  {
+    title: "Tytuł lorem ipsum dolor",
+    date: "14.06.2022",
+    short:
+      "Lorem ipsum dolor sit lorem  amet, consectetur adipiscing elit. Lorem ipsum dolor sit lorem  amet, consectetur adipiscing elit. ",
+    link: "/",
+    img: "/assets/blog-home-3.png",
+  },
+];
+---
+
+<section class="bg-secondary-300 rounded-t-r_20 py-[50px] blog-roll">
+  <div class="wrapper">
+    <h2 class="text-2xl md:text-5xl font-bold mb-[40px] text-center">
+      Popularne wpisy na naszym blogu
+    </h2>
+    <div class="swiper blog-home-swiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <div>
+            <img
+              class="rounded-t-r_20"
+              width="344"
+              height="202"
+              src="/assets/blog-home-1.png"
+            />
+          </div>
+          <div class="px-8 pt-8 pb-[45px] bg-white rounded-b-r_20">
+            <h5 class="text-xl md:text-2xl font-bold mb-2">
+              Tytuł lorem ipsum dolor
+            </h5>
+            <span class="text-small">14.06.2022</span>
+            <p class="block mt-2">
+              Lorem ipsum dolor sit lorem amet, consectetur adipiscing elit.
+              Lorem ipsum dolor sit lorem amet, consectetur adipiscing elit.
+            </p>
+            <a href="/" class="btn primary block mt-8">Zobacz więcej zdjęć</a>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div>
+            <img
+              class="rounded-t-r_20"
+              width="344"
+              height="202"
+              src="/assets/blog-home-2.png"
+            />
+          </div>
+          <div class="px-8 pt-8 pb-[45px] bg-white rounded-b-r_20">
+            <h5 class="text-xl md:text-2xl font-bold mb-2">
+              Tytuł lorem ipsum dolor
+            </h5>
+            <span class="text-small">14.06.2022</span>
+            <p class="block mt-2">
+              Lorem ipsum dolor sit lorem amet, consectetur adipiscing elit.
+              Lorem ipsum dolor sit lorem amet, consectetur adipiscing elit.
+            </p>
+            <a href="/" class="btn primary block mt-8">Zobacz więcej zdjęć</a>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div>
+            <img
+              class="rounded-t-r_20"
+              width="344"
+              height="202"
+              src="/assets/blog-home-3.png"
+            />
+          </div>
+          <div class="px-8 pt-8 pb-[45px] bg-white rounded-b-r_20">
+            <h5 class="text-xl md:text-2xl font-bold mb-2">
+              Tytuł lorem ipsum dolor
+            </h5>
+            <span class="text-small">14.06.2022</span>
+            <p class="block mt-2">
+              Lorem ipsum dolor sit lorem amet, consectetur adipiscing elit.
+              Lorem ipsum dolor sit lorem amet, consectetur adipiscing elit.
+            </p>
+            <a href="/" class="btn primary block mt-8">Zobacz więcej zdjęć</a>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div>
+            <img
+              class="rounded-t-r_20"
+              width="344"
+              height="202"
+              src="/assets/blog-home-3.png"
+            />
+          </div>
+          <div class="px-8 pt-8 pb-[45px] bg-white rounded-b-r_20">
+            <h5 class="text-xl md:text-2xl font-bold mb-2">
+              Tytuł lorem ipsum dolor
+            </h5>
+            <span class="text-small">14.06.2022</span>
+            <p class="block mt-2">
+              Lorem ipsum dolor sit lorem amet, consectetur adipiscing elit.
+              Lorem ipsum dolor sit lorem amet, consectetur adipiscing elit.
+            </p>
+            <a href="/" class="btn primary block mt-8">Zobacz więcej zdjęć</a>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div>
+            <img
+              class="rounded-t-r_20"
+              width="344"
+              height="202"
+              src="/assets/blog-home-3.png"
+            />
+          </div>
+          <div class="px-8 pt-8 pb-[45px] bg-white rounded-b-r_20">
+            <h5 class="text-xl md:text-2xl font-bold mb-2">
+              Tytuł lorem ipsum dolor
+            </h5>
+            <span class="text-small">14.06.2022</span>
+            <p class="block mt-2">
+              Lorem ipsum dolor sit lorem amet, consectetur adipiscing elit.
+              Lorem ipsum dolor sit lorem amet, consectetur adipiscing elit.
+            </p>
+            <a href="/" class="btn primary block mt-8">Zobacz więcej zdjęć</a>
+          </div>
+        </div>
+      </div>
+      <!-- If we need pagination -->
+      <div class="swiper-pagination blog-pagination"></div>
+
+      <!-- If we need navigation buttons -->
+      <div class="swiper-button-prev blog-prev">
+        <svg
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M12 20L4 12L12 4L13.425 5.4L7.825 11H20V13H7.825L13.425 18.6L12 20Z"
+            fill="#094F0C"></path>
+        </svg>
+      </div>
+      <div class="swiper-button-next blog-next">
+        <svg
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M12 4L20 12L12 20L10.575 18.6L16.175 13L4 13L4 11L16.175 11L10.575 5.4L12 4Z"
+            fill="#094F0C"></path>
+        </svg>
+      </div>
+    </div>
+  </div>
+</section>

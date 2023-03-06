@@ -1,0 +1,267 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "DibberStabilGrotesk";
+  src: url("/fonts/DibberStabilGrotesk-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "DibberStabilGrotesk";
+  src: url("/fonts/DibberStabilGrotesk-Medium.woff") format("woff");
+  font-weight: medium;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "DibberStabilGrotesk";
+  src: url("/fonts/DibberStabilGrotesk-Bold.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "DibberStabilGrotesk";
+  src: url("/fonts/DibberStabilGrotesk-Regular.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "DibberStabilGrotesk";
+  src: url("/fonts/DibberStabilGrotesk-Medium.woff2") format("woff2");
+  font-weight: medium;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "DibberStabilGrotesk";
+  src: url("/fonts/DibberStabilGrotesk-Bold.woff2") format("woff2");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+html {
+  font-family: DibberStabilGrotesk, sans-serif;
+  font-size: 16px;
+}
+body {
+  background-color: #f8f7ef;
+  color: #094f0c;
+}
+a {
+  cursor: pointer;
+}
+.wrapper {
+  padding-left: 32px;
+  padding-right: 32px;
+}
+@media (min-width: 1024px) {
+  .wrapper {
+    padding-left: 60px;
+    padding-right: 60px;
+    max-width: 1440px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+h1 {
+  font-size: 56px;
+  line-height: 56px;
+  font-weight: 700;
+}
+h2 {
+  font-weight: 700;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  text-align: center;
+}
+h3 {
+  font-size: 1.25rem;
+  line-height: 1.5rem;
+}
+h5 {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  font-weight: bold;
+}
+.text-small {
+  font-size: 0.875rem;
+  line-height: 1.125rem;
+  font-weight: 500;
+}
+@media (min-width: 768px) {
+  h1 {
+    font-size: 100px;
+    line-height: 100px;
+  }
+  h2 {
+    font-size: 3rem;
+    line-height: 1;
+  }
+  h3 {
+    font-size: 32px;
+    line-height: 42px;
+  }
+  h5 {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+}
+.dibber-container {
+  max-width: 1089px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.modal-toggle {
+  position: fixed;
+  height: 0;
+  width: 0;
+  -webkit-appearance: none;
+  appearance: none;
+  opacity: 0;
+}
+
+.mobile-menu {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 100;
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
+  transition-duration: 300ms;
+  transition-timing-function: cubic-bezier(0.53, 0, 0.43, 1);
+}
+@media (min-width: 768px) {
+  .mobile-menu {
+    position: static;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: painted;
+  }
+}
+.modal-toggle:checked + .mobile-menu {
+  opacity: 1;
+  visibility: visible;
+  z-index: 996;
+  pointer-events: painted;
+  overflow-y: hidden;
+  overscroll-behavior: contain;
+}
+.drawer {
+  display: grid;
+  width: 100%;
+  overflow: hidden;
+  height: 100vh;
+  height: 100dvh;
+}
+.drawer-content {
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  display: grid;
+}
+.btn {
+  border-radius: 8px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 64px;
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 600;
+  margin-left: auto;
+  margin-right: auto;
+  transition-duration: 300ms;
+  transition-timing-function: cubic-bezier(0.53, 0, 0.43, 1);
+}
+.primary:hover {
+  background-color: #c2f291;
+  color: #094f0c;
+}
+.primary {
+  background-color: #094f0c;
+  color: #c2f291;
+}
+.blog-roll .btn {
+  padding-left: 0px;
+  padding-right: 0px;
+}
+.svg-clover-mask {
+  mask: url("/assets/clover.svg");
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-size: contain;
+}
+
+.tab-item {
+  display: none;
+}
+.tab-item.active {
+  display: block;
+  -webkit-animation-name: fadeIn;
+  animation-name: fadeIn;
+  animation-duration: 800ms;
+  animation-timing-function: cubic-bezier(0.53, 0, 0.43, 1);
+}
+.tab-nav button:hover {
+  transition-duration: 300ms;
+  transition-timing-function: cubic-bezier(0.53, 0, 0.43, 1);
+  background-color: #c2f291;
+  color: #094f0c;
+  border-radius: 8px;
+}
+.tab-nav button.active {
+  background-color: #094f0c;
+  color: #c2f291;
+  border-radius: 8px;
+}
+@-webkit-keyframes zoomIn {
+  from {
+    opacity: 0;
+    -webkit-transform: scale3d(0.3, 0.3, 0.3);
+    transform: scale3d(0.3, 0.3, 0.3);
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+@keyframes zoomIn {
+  from {
+    opacity: 0;
+    -webkit-transform: scale3d(0.3, 0.3, 0.3);
+    transform: scale3d(0.3, 0.3, 0.3);
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+.animate__zoomIn {
+  -webkit-animation-name: zoomIn;
+  animation-name: zoomIn;
+}
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}

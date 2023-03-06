@@ -1,0 +1,82 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Card from "../components/Card.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import Newsletter from "../components/Newsletter.astro";
+import SocialMedia from "../components/SocialMedia.astro";
+import BlogHome from "../components/BlogHome.astro";
+import HomeGalery from "../components/HomeGalery.astro";
+import HomeReview from "../components/HomeReview.astro";
+import HomeEducation from "../components/HomeEducation.astro";
+import HomeGreen from "../components/HomeGreen.astro";
+import WhyDibber from "../components/WhyDibber.astro";
+import HomePlay from "../components/HomePlay.astro";
+import HomeHero from "../components/HomeHero.astro";
+---
+
+<Layout title="Welcome to Astro.">
+  <Header />
+  <HomeHero />
+  <HomePlay />
+  <WhyDibber />
+  <HomeGreen />
+  <HomeEducation />
+  <HomeReview />
+  <HomeGalery />
+  <BlogHome />
+  <SocialMedia />
+  <Newsletter />
+  <Footer />
+</Layout>
+
+<style>
+  html {
+    background: #f8f7ef;
+  }
+  .text-gradient {
+    background-image: var(--accent-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 400%;
+    background-position: 0%;
+  }
+  .instructions {
+    line-height: 1.6;
+    margin: 1rem 0;
+    border: 1px solid rgba(var(--accent), 25%);
+    background-color: white;
+    padding: 1rem;
+    border-radius: 0.4rem;
+  }
+  .instructions code {
+    font-size: 0.875em;
+    font-weight: bold;
+    background: rgba(var(--accent), 12%);
+    color: rgb(var(--accent));
+    border-radius: 4px;
+    padding: 0.3em 0.45em;
+  }
+  .instructions strong {
+    color: rgb(var(--accent));
+  }
+  .link-card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
+    gap: 1rem;
+    padding: 0;
+  }
+</style>
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
+/>
+
+<link rel="stylesheet" href="/slider.css" />
+<script
+  is:inline
+  src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"
+></script>
+<script is:inline></script>
+
+<script is:inline src="/script.js"></script>

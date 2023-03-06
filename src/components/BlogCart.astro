@@ -1,0 +1,17 @@
+---
+const { cardBlog } = Astro.props;
+---
+
+<div class="swiper-slide">
+  <div>
+    <img class="rounded-t-r_20" width="344" height="202" src={cardBlog.img} />
+  </div>
+  <div class="px-8 pt-8 pb-[45px] bg-white rounded-b-r_20">
+    <h5 class="text-xl md:text-2xl font-bold mb-2">{cardBlog.title}</h5>
+    <span>{cardBlog.date}</span>
+    <p class="block mt-2">{cardBlog.short}</p>
+    <a href={cardBlog.link} class="btn primary block mt-8"
+      >Zobacz więcej zdjęć</a
+    >
+  </div>
+</div>

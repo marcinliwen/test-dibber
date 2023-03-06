@@ -1,0 +1,57 @@
+---
+const { menuLinks } = Astro.props;
+---
+
+{
+  menuLinks.map((item) => {
+    if (item.submenu) {
+      return (
+        <li class="group/nav relative  transition duration-300 rounded-r_20">
+          <a
+            href={item.link}
+            class="text-xl md:text-lg block font-medium relative z-20  group-hover/nav:underline transition duration-300 ease-morph py-3 px-3 lg:px-6"
+          >
+            {item.name}
+          </a>
+          <ul class="md:hidden group-hover/nav:block md:absolute top-0 left-0  z-10 rounded-r_20 md:bg-white pt-0 md:pt-[44px] pb-0 md:pb-3 pl-12 md:px-6 w-[300px]  lg:w-[337px] ">
+            {item.submenu.map((submenu) => {
+              return (
+                <li class="">
+                  <a
+                    href={submenu.link}
+                    class="font-regular text-base leading-[30px] py-3 md:px-1 md:p-1 flex items-center md:hover:bg-secondary-200/40 group/subnav cursor-pointer transition duration-300 ease-morph"
+                  >
+                    <span>{submenu.name}</span>
+                    <svg
+                      width="16"
+                      height="16"
+                      viewBox="0 0 16 16"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="ml-auto opacity-0 md:group-hover/subnav:opacity-100 mr-[6px] transition duration-300 ease-morph"
+                    >
+                      <path
+                        d="M8 6.99382e-07L16 8L8 16L6.575 14.6L12.175 9L-6.11959e-07 9L-7.86805e-07 7L12.175 7L6.575 1.4L8 6.99382e-07Z"
+                        fill="#094F0C"
+                      />
+                    </svg>
+                  </a>
+                </li>
+              );
+            })}
+          </ul>
+        </li>
+      );
+    }
+    return (
+      <li>
+        <a
+          href={item.link}
+          class="text-xl md:text-lg block  font-medium rounded-r_20 md:hover:bg-white hover:underline transition duration-300 ease-morph py-3 px-3 lg:px-6"
+        >
+          {item.name}
+        </a>
+      </li>
+    );
+  })
+}
