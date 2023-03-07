@@ -41,9 +41,16 @@
   width: 100%;
   object-fit: contain;
 }
-
-.swiper-pagination-bullets.swiper-pagination-horizontal.hero-pagination {
-  bottom: 86px;
-  display: flex;
-  justify-content: flex-end;
+.hero-pagination {
+  display: none;
+}
+@media (min-width: 768px) {
+  .swiper-pagination-bullets.swiper-pagination-horizontal.hero-pagination {
+    bottom: 86px;
+    display: flex;
+    justify-content: flex-end;
+    width: 50%;
+    right: 0;
+    left: 50%;
+  }
 }

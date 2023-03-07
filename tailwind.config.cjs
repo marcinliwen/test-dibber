@@ -21,6 +21,7 @@ module.exports = {
           300: "#2F991E",
           400: "#094F0C",
           500: "#EAFADA",
+          600: "#B5F484",
         },
         secondary: {
           100: "#F1F4F0",
@@ -30,6 +31,9 @@ module.exports = {
         },
         neutral: {
           100: "#F8F7EE",
+          200: "#EFEBD9",
+          300: "#E5E0C3",
+          400: "#F0F4F0",
         },
         educational: {
           play: "#C50C7B",
