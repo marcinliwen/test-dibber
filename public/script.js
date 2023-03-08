@@ -151,4 +151,23 @@ window.onload = (event) => {
   });
 
   dropdown.addEventListener("click", toggleDropdown);
+
+  const childAge = document.querySelector(".child-age");
+  const plus = document.getElementById("plus");
+  const minus = document.getElementById("minus");
+
+  plus.addEventListener("click", function () {
+    let input = document.getElementById("child-age");
+    let val = input.value;
+    if (val <= 9) {
+      input.value = Number(val) + 1;
+    }
+  });
+  minus.addEventListener("click", function () {
+    let input = document.getElementById("child-age");
+    let val = input.value;
+    if (val > 0) {
+      input.value = Number(val) - 1;
+    }
+  });
 };
