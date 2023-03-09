@@ -290,3 +290,17 @@ h5 {
   background-position-x: calc(100% - 23px);
   background-position-y: 50%;
 } */
+#map {
+  height: 500px;
+  border-radius: 20px;
+  margin-bottom: 58px;
+  background: linear-gradient(
+    0deg,
+    rgba(194, 242, 145, 0.5),
+    rgba(194, 242, 145, 0.5)
+  );
+}
+.show {
+  opacity: 100;
+  transition-duration: 300ms;
+}

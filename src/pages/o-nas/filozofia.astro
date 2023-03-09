@@ -6,10 +6,14 @@ import Meeting from "../../components/Meeting.astro";
 import HomeGalery from "../../components/HomeGalery.astro";
 import WhyDibber from "../../components/WhyDibber.astro";
 import Newsletter from "../../components/Newsletter.astro";
+import Breadcrump from "../../components/Breadcrump.astro";
 ---
 
 <Layout title="Filozofia Dibber">
   <Header />
+  <Breadcrump
+    breadcrumps={[{ name: "Filozofia Dibber", link: "/o-nas/filozofia" }]}
+  />
   <section class="pb-[129px]">
     <div class="wrapper">
       <h2

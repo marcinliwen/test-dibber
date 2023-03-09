@@ -3,10 +3,19 @@ import Layout from "../../layouts/Layout.astro";
 import Header from "../../components/Header.astro";
 import Footer from "../../components/Footer.astro";
 import Newsletter from "../../components/Newsletter.astro";
+import Breadcrump from "../../components/Breadcrump.astro";
 ---
 
 <Layout title="Dibber na świecie">
   <Header />
+  <Breadcrump
+    breadcrumps={[
+      {
+        name: "Dibber na świecie",
+        link: "/o-nas/na-swiecie",
+      },
+    ]}
+  />
   <section class="relative pb-[113px]">
     <div class="wrapper">
       <div class="flex flex-col md:flex-row">
