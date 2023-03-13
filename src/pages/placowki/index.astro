@@ -15,7 +15,7 @@ const places = [
     img: "/assets/placowka-img.png",
     description:
       "Przedszklole i żłobek Kids&Co. w biurowcu D48 przy Domianiewskiej  na Mokotowie. Przedszkole i żłobek funkcjonują podobnie jak reszta naszych placówek, przez cały rok od poniedziałku do piątku.",
-    link: "/placowki",
+    link: "/placowki/wybrana-placowka",
   },
   {
     name: "Placówka",
@@ -26,7 +26,7 @@ const places = [
     img: "/assets/placowka-img.png",
     description:
       "Przedszklole i żłobek Kids&Co. w biurowcu D48 przy Domianiewskiej  na Mokotowie. Przedszkole i żłobek funkcjonują podobnie jak reszta naszych placówek, przez cały rok od poniedziałku do piątku.",
-    link: "/placowki",
+    link: "/placowki/wybrana-placowka",
   },
   {
     name: "Placówka",
@@ -37,12 +37,10 @@ const places = [
     img: "/assets/placowka-img.png",
     description:
       "Przedszklole i żłobek Kids&Co. w biurowcu D48 przy Domianiewskiej  na Mokotowie. Przedszkole i żłobek funkcjonują podobnie jak reszta naszych placówek, przez cały rok od poniedziałku do piątku.",
-    link: "/placowki",
+    link: "/placowki/wybrana-placowka",
   },
 ];
 ---
-
-<head> </head>
 
 <Layout title="Welcome to Astro.">
   <Header />
@@ -496,7 +494,10 @@ const places = [
                       <p class="text-lg font-medium mt-4 mb-8">
                         {item.description}
                       </p>
-                      <a class="btn primary max-w-max !p-5 !ml-0">
+                      <a
+                        href={item.link}
+                        class="btn primary max-w-max !p-5 !ml-0"
+                      >
                         Pokaz więcej
                       </a>
                     </div>

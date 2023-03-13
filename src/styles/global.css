@@ -309,3 +309,41 @@ h5 {
   background: transparent;
   box-shadow: none;
 }
+.customPopup {
+  width: 255px;
+}
+.details .leaflet-popup-content {
+  margin: 0;
+  width: 100% !important;
+}
+.details .leaflet-popup-content-wrapper {
+  width: 255px;
+}
+.details .nav-btn {
+  display: block;
+  padding: 20px;
+  width: 100%;
+}
+.details .leaflet-popup-pane {
+  z-index: 550;
+}
+@media (min-width: 1024px) {
+  .customPopup {
+    width: 317px;
+    padding: 32px;
+  }
+  .details .leaflet-popup-content {
+    margin: 0;
+    width: 100% !important;
+  }
+  .details .leaflet-popup-content-wrapper {
+    width: 317px;
+  }
+  .leaflet-container a.leaflet-popup-close-button {
+    top: 8px;
+    right: 8px;
+  }
+}
+.nav-btn {
+  display: none;
+}

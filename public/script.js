@@ -182,6 +182,7 @@ window.onload = (event) => {
     });
   }
   if (typeof L !== undefined) {
+    console.log("loading map...");
     var map = L.map("map");
     L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
       // Specify the maximum zoom of the map
@@ -208,13 +209,21 @@ window.onload = (event) => {
       map
     );
 
+    const screen = window.innerWidth;
+    const defaultPoints = screen < 768 ? [-150, 150] : [-200, 150];
     customMarker
-      .bindPopup(customPopup, { minWidth: 317, offset: [-200, 150] })
+      .bindPopup(customPopup, {
+        minWidth: 255,
+        offset:
+          typeof mapPopupPosition !== "undefined"
+            ? mapPopupPosition
+            : defaultPoints,
+      })
       .openPopup();
   }
 };
 
-const customPopup = `<div class="rounded-r_20 p-8 bg-secondary-200 w-[317px] z-20  customPopup ">
+const customPopup = `<div class="rounded-r_20 p-4 lg:p-8 bg-secondary-200  z-20  customPopup ">
 <div class="flex gap-5 items-center bg-white px-4 py-2" style="margin-bottom:12px">
 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
 <mask id="mask0_174_13742" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="24">
@@ -242,4 +251,4 @@ const customPopup = `<div class="rounded-r_20 p-8 bg-secondary-200 w-[317px] z-2
 </svg>
 <p class="text-sm font-bold">+48 501 393 891</p>
 </div>
-</div>`;
+</div><button class="btn primary nav-btn">Wyznacz trasę dojazdu</button>`;
