@@ -1,0 +1,24 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+import Breadcrump from "../../components/Breadcrump.astro";
+import Newsletter from "../../components/Newsletter.astro";
+import HelpSearch from "../../components/HelpSearch.astro";
+---
+
+<Layout title="Welcome to Astro.">
+  <Header />
+  <Breadcrump
+    breadcrumps={[
+      {
+        name: "Kontakt",
+        link: "/kontakt",
+      },
+    ]}
+  />
+  <HelpSearch />
+  <section class="pt-[49px] pb-[94px]"><div class="wrapper"></div></section>
+  <Newsletter />
+  <Footer />
+</Layout>
