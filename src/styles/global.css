@@ -304,3 +304,8 @@ h5 {
   opacity: 100;
   transition-duration: 300ms;
 }
+#map .leaflet-popup-content-wrapper,
+#map .leaflet-popup-tip {
+  background: transparent;
+  box-shadow: none;
+}
