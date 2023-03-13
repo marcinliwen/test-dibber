@@ -58,7 +58,7 @@ const places = [
         <div class="w-full py-[10px] bg-primary-700 rounded-r_20 mb-8">
           <h2>Nasze placówki</h2>
         </div>
-        <form>
+        <form id="filters">
           <div class="md:flex gap-4">
             <input
               class="mb-5 md:mb-0 w-full pt-[20px] pr-[31px] pb-[25px] pl-[39px] rounded-lg border border-primary-400 placeholder-primary-400 bg-primary-100 focus:bg-primary-500 focus:outline-none"
@@ -71,8 +71,8 @@ const places = [
               type="submit">Szukaj</button
             >
           </div>
-          <div class="flex justify-between mt-4 mb-4">
-            <button class="flex" type="button">
+          <div id="filters-action" class="flex justify-between mt-4 mb-4">
+            <button id="filters-open" class="flex items-center" type="button">
               <span class="text-xl">Kategorie</span>
               <span
                 ><svg
@@ -88,7 +88,11 @@ const places = [
                 </svg>
               </span>
             </button>
-            <button class="flex" type="button">
+            <button
+              id="clear-filters"
+              class="flex hover:bg-primary-200 transition duration-300 ease-morph rounded-xl py-1 px-2 active:bg-transparent"
+              type="button"
+            >
               <span class="text-base">Wyczyść filtry</span><span
                 ><svg
                   width="24"
@@ -122,9 +126,9 @@ const places = [
               </span>
             </button>
           </div>
-          <div class="flex flex-wrap gap-4">
+          <div class="flex flex-wrap gap-4 filter-box">
             <label
-              class="pl-10 py-5 pr-16 bg-primary-100 focus:bg-primary-500 border border-primary-400 focus:outline-none rounded-xl block relative"
+              class="pl-10 py-5 pr-16 bg-primary-100 focus:bg-primary-500 border border-primary-400 focus:outline-none rounded-xl block relative cursor-pointer"
             >
               <input
                 type="checkbox"
@@ -132,11 +136,11 @@ const places = [
                 class="opacity-0 peer"
               />
               <span
-                class="bg-primary-200 absolute inset-0 opacity-0 z-10 peer-checked:opacity-100 rounded-xl"
+                class="bg-primary-200 absolute inset-0 opacity-0 z-10 peer-checked:opacity-100 rounded-xl transition duration-300 ease-morph"
               ></span>
               <span class="relative z-20">Przedszkola</span>
               <span
-                class="opacity-100 peer-checked:opacity-0 absolute right-[20px] z-30"
+                class="opacity-100 peer-checked:rotate-45 absolute transition duration-300 ease-morph right-[20px] z-30"
                 ><svg
                   width="24"
                   height="24"
@@ -162,7 +166,7 @@ const places = [
                   </g>
                 </svg>
               </span>
-              <span
+              <!--   <span
                 class="opacity-0 peer-checked:opacity-100 absolute right-[20px] z-30"
                 ><svg
                   width="24"
@@ -188,18 +192,18 @@ const places = [
                       fill="#094F0C"></path>
                   </g>
                 </svg>
-              </span>
+              </span> -->
             </label>
             <label
-              class="pl-10 py-5 pr-16 bg-primary-100 focus:bg-primary-500 border border-primary-400 focus:outline-none rounded-xl block relative"
+              class="pl-10 py-5 pr-16 bg-primary-100 focus:bg-primary-500 border border-primary-400 focus:outline-none rounded-xl block relative cursor-pointer"
             >
               <input type="checkbox" name="ground" class="opacity-0 peer" />
               <span
-                class="bg-primary-200 absolute inset-0 opacity-0 z-10 peer-checked:opacity-100 rounded-xl"
+                class="bg-primary-200 absolute inset-0 opacity-0 z-10 peer-checked:opacity-100 rounded-xl transition duration-300 ease-morph"
               ></span>
               <span class="relative z-20">Szkoły podstawowe</span>
               <span
-                class="opacity-100 peer-checked:opacity-0 absolute right-[20px] z-30"
+                class="opacity-100 peer-checked:rotate-45 absolute right-[20px] z-30 transition duration-300 ease-morph"
                 ><svg
                   width="24"
                   height="24"
@@ -225,36 +229,9 @@ const places = [
                   </g>
                 </svg>
               </span>
-              <span
-                class="opacity-0 peer-checked:opacity-100 absolute right-[20px] z-30"
-                ><svg
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <mask
-                    id="mask0_362_3927"
-                    style="mask-type:alpha"
-                    maskUnits="userSpaceOnUse"
-                    x="0"
-                    y="0"
-                    width="24"
-                    height="24"
-                  >
-                    <rect width="24" height="24" fill="#D9D9D9"></rect>
-                  </mask>
-                  <g mask="url(#mask0_362_3927)">
-                    <path
-                      d="M12.99 20.9095L11.0101 20.9095V12.9899L3.09054 12.9899V11.0101L11.0101 11.0101V3.09045L12.99 3.09045L12.99 11.0101H20.9096V12.9899H12.99L12.99 20.9095Z"
-                      fill="#094F0C"></path>
-                  </g>
-                </svg>
-              </span>
             </label>
             <label
-              class="pl-10 py-5 pr-16 bg-primary-100 focus:bg-primary-500 border border-primary-400 focus:outline-none rounded-xl block relative"
+              class="pl-10 py-5 pr-16 bg-primary-100 focus:bg-primary-500 border border-primary-400 focus:outline-none rounded-xl block relative cursor-pointer"
             >
               <input
                 type="checkbox"
@@ -262,11 +239,11 @@ const places = [
                 class="opacity-0 peer"
               />
               <span
-                class="bg-primary-200 absolute inset-0 opacity-0 z-10 peer-checked:opacity-100 rounded-xl"
+                class="bg-primary-200 absolute inset-0 opacity-0 z-10 peer-checked:opacity-100 rounded-xl transition duration-300 ease-morph"
               ></span>
               <span class="relative z-20">Placówki integracyjne</span>
               <span
-                class="opacity-100 peer-checked:opacity-0 absolute right-[20px] z-30"
+                class="opacity-100 peer-checked:rotate-45 absolute right-[20px] z-30 transition duration-300 ease-morph"
                 ><svg
                   width="24"
                   height="24"
@@ -288,48 +265,21 @@ const places = [
                   <g mask="url(#mask0_362_1515)">
                     <path
                       d="M6.4 19L5 17.6L10.6 12L5 6.4L6.4 5L12 10.6L17.6 5L19 6.4L13.4 12L19 17.6L17.6 19L12 13.4L6.4 19Z"
-                      fill="#094F0C"></path>
-                  </g>
-                </svg>
-              </span>
-              <span
-                class="opacity-0 peer-checked:opacity-100 absolute right-[20px] z-30"
-                ><svg
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <mask
-                    id="mask0_362_3927"
-                    style="mask-type:alpha"
-                    maskUnits="userSpaceOnUse"
-                    x="0"
-                    y="0"
-                    width="24"
-                    height="24"
-                  >
-                    <rect width="24" height="24" fill="#D9D9D9"></rect>
-                  </mask>
-                  <g mask="url(#mask0_362_3927)">
-                    <path
-                      d="M12.99 20.9095L11.0101 20.9095V12.9899L3.09054 12.9899V11.0101L11.0101 11.0101V3.09045L12.99 3.09045L12.99 11.0101H20.9096V12.9899H12.99L12.99 20.9095Z"
                       fill="#094F0C"></path>
                   </g>
                 </svg>
               </span>
             </label>
             <label
-              class="pl-10 py-5 pr-16 bg-primary-100 focus:bg-primary-500 border border-primary-400 focus:outline-none rounded-xl block relative"
+              class="pl-10 py-5 pr-16 bg-primary-100 focus:bg-primary-500 border border-primary-400 focus:outline-none rounded-xl block relative cursor-pointer"
             >
               <input type="checkbox" name="infants" class="opacity-0 peer" />
               <span
-                class="bg-primary-200 absolute inset-0 opacity-0 z-10 peer-checked:opacity-100 rounded-xl"
+                class="bg-primary-200 absolute inset-0 opacity-0 z-10 peer-checked:opacity-100 rounded-xl transition duration-300 ease-morph"
               ></span>
               <span class="relative z-20">Żłobki</span>
               <span
-                class="opacity-100 peer-checked:opacity-0 absolute right-[20px] z-30"
+                class="opacity-100 peer-checked:rotate-45 absolute right-[20px] z-30 transition duration-300 ease-morph"
                 ><svg
                   width="24"
                   height="24"
@@ -355,38 +305,14 @@ const places = [
                   </g>
                 </svg>
               </span>
-              <span
-                class="opacity-0 peer-checked:opacity-100 absolute right-[20px] z-30"
-                ><svg
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <mask
-                    id="mask0_362_3927"
-                    style="mask-type:alpha"
-                    maskUnits="userSpaceOnUse"
-                    x="0"
-                    y="0"
-                    width="24"
-                    height="24"
-                  >
-                    <rect width="24" height="24" fill="#D9D9D9"></rect>
-                  </mask>
-                  <g mask="url(#mask0_362_3927)">
-                    <path
-                      d="M12.99 20.9095L11.0101 20.9095V12.9899L3.09054 12.9899V11.0101L11.0101 11.0101V3.09045L12.99 3.09045L12.99 11.0101H20.9096V12.9899H12.99L12.99 20.9095Z"
-                      fill="#094F0C"></path>
-                  </g>
-                </svg>
-              </span>
             </label>
             <div
-              class="px-10 py-5 bg-primary-100 focus:bg-primary-500 border border-primary-400 rounded-xl flex items-center justify-between w-[353px]"
+              class="px-10 py-3 bg-primary-100 focus:bg-primary-500 border border-primary-400 rounded-xl flex items-center justify-between w-[353px]"
             >
-              <button id="minus" type="button"
+              <button
+                id="minus"
+                type="button"
+                class="hover:bg-primary-200 rounded-lg p-2 transition duration-200 ease-morph active:bg-transparent group"
                 ><svg
                   width="24"
                   height="24"
@@ -410,7 +336,10 @@ const places = [
                   class="bg-transparent w-[14px] text-lg"
                 />lat
               </label>
-              <button id="plus" type="button"
+              <button
+                id="plus"
+                type="button"
+                class="hover:bg-primary-200 rounded-lg p-2 transition duration-200 ease-morph active:bg-transparent group"
                 ><svg
                   width="24"
                   height="24"

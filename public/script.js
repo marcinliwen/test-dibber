@@ -156,11 +156,24 @@ window.onload = (event) => {
     dropdown.addEventListener("click", toggleDropdown);
   }
 
+  const filtersOpenBtn = document.getElementById("filters-open");
+  const filtersAction = document.getElementById("filters-action");
+  const filterBox = document.querySelector(".filter-box");
+  const clearFilters = document.getElementById("clear-filters");
+
+  if (typeof filtersOpenBtn !== "undefined") {
+    console.log("toggle");
+    filtersOpenBtn.addEventListener("click", (event) => {
+      console.log("click");
+      filtersAction.classList.toggle("active");
+      filterBox.classList.toggle("open");
+    });
+  }
   const childAge = document.querySelector(".child-age");
   const plus = document.getElementById("plus");
   const minus = document.getElementById("minus");
 
-  if (typeof plus !== undefined && plus) {
+  if (typeof plus !== "undefined" && plus) {
     console.log("plus");
     plus.addEventListener("click", function () {
       let input = document.getElementById("child-age");
@@ -171,7 +184,7 @@ window.onload = (event) => {
     });
   }
 
-  if (typeof minus !== undefined && minus) {
+  if (typeof minus !== "undefined" && minus) {
     console.log("minus");
     minus.addEventListener("click", function () {
       let input = document.getElementById("child-age");
@@ -181,6 +194,15 @@ window.onload = (event) => {
       }
     });
   }
+  clearFilters.addEventListener("click", () => {
+    let input = document.getElementById("child-age");
+    input.value = 0;
+    var filters = document.querySelectorAll('#filters input[type="checkbox"]');
+    filters.forEach((item) => {
+      console.log(item);
+      return (item.checked = false);
+    });
+  });
   if (typeof L !== undefined) {
     console.log("loading map...");
     var map = L.map("map");
