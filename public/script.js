@@ -161,10 +161,8 @@ window.onload = (event) => {
   const filterBox = document.querySelector(".filter-box");
   const clearFilters = document.getElementById("clear-filters");
 
-  if (typeof filtersOpenBtn !== "undefined") {
-    console.log("toggle");
-    filtersOpenBtn.addEventListener("click", (event) => {
-      console.log("click");
+  if (filtersOpenBtn) {
+    filtersOpenBtn.addEventListener("click", () => {
       filtersAction.classList.toggle("active");
       filterBox.classList.toggle("open");
     });
@@ -194,16 +192,21 @@ window.onload = (event) => {
       }
     });
   }
-  clearFilters.addEventListener("click", () => {
-    let input = document.getElementById("child-age");
-    input.value = 0;
-    var filters = document.querySelectorAll('#filters input[type="checkbox"]');
-    filters.forEach((item) => {
-      console.log(item);
-      return (item.checked = false);
+  if (clearFilters) {
+    clearFilters.addEventListener("click", () => {
+      let input = document.getElementById("child-age");
+      input.value = 0;
+      var filters = document.querySelectorAll(
+        '#filters input[type="checkbox"]'
+      );
+      filters.forEach((item) => {
+        console.log(item);
+        return (item.checked = false);
+      });
     });
-  });
-  if (typeof L !== undefined) {
+  }
+
+  if (typeof L !== "undefined") {
     console.log("loading map...");
     var map = L.map("map");
     L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
