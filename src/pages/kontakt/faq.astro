@@ -99,10 +99,10 @@ const category_3 = [
               {
                 category_1.map((item, index) => (
                   <>
-                    <input type="radio" id={`acc_${index}`} name="acc" />
+                    <input type="radio" id={`acc1_${index}`} name="acc1" />
                     <div class="accordion-item rounded-lg bg-secondary-200 pl-6 md:pl-[49px]">
                       <label
-                        for={`acc_${index}`}
+                        for={`acc1_${index}`}
                         class="accordion-title pt-4 md:pt-6 font-semibold text-lg cursor-pointer flex items-center pr-4 md:pr-6"
                       >
                         <span class="flex-1">{item.title}</span>
@@ -131,17 +131,17 @@ const category_3 = [
                   </>
                 ))
               }
-              <input id="acc_close" type="radio" name="acc" />
+              <input id="acc_close" type="radio" name="acc1" />
             </div>
             <h5 class="my-8">Kategoria 2</h5>
             <div class="accordion grid gap-8">
               {
                 category_2.map((item, index) => (
                   <>
-                    <input type="radio" id={`acc_${index}`} name="acc" />
+                    <input type="radio" id={`acc2_${index}`} name="acc2" />
                     <div class="accordion-item rounded-lg bg-secondary-200 pl-6 md:pl-[49px]">
                       <label
-                        for={`acc_${index}`}
+                        for={`acc2_${index}`}
                         class="accordion-title pt-4 md:pt-6 font-semibold text-lg cursor-pointer flex items-center pr-4 md:pr-6"
                       >
                         <span class="flex-1">{item.title}</span>
@@ -160,7 +160,7 @@ const category_3 = [
                         </svg>
                       </label>
                       <label
-                        for="acc_close"
+                        for="acc2_close"
                         class="accordion-close h-[80px] cursor-pointer"
                       />
                       <div class="accordion-content leading-8 text-base font-medium pt-4 md:pt-6 pr-8 md:pr-16">
@@ -170,17 +170,17 @@ const category_3 = [
                   </>
                 ))
               }
-              <input id="acc_close" type="radio" name="acc" />
+              <input id="acc2_close" type="radio" name="acc2" />
             </div>
             <h5 class="my-8">Kategoria 3</h5>
             <div class="accordion grid gap-8">
               {
                 category_3.map((item, index) => (
                   <>
-                    <input type="radio" id={`acc_${index}`} name="acc" />
+                    <input type="radio" id={`acc3_${index}`} name="acc3" />
                     <div class="accordion-item rounded-lg bg-secondary-200 pl-6 md:pl-[49px]">
                       <label
-                        for={`acc_${index}`}
+                        for={`acc3_${index}`}
                         class="accordion-title pt-4 md:pt-6 font-semibold text-lg cursor-pointer flex items-center pr-4 md:pr-6"
                       >
                         <span class="flex-1">{item.title}</span>
@@ -199,7 +199,7 @@ const category_3 = [
                         </svg>
                       </label>
                       <label
-                        for="acc_close"
+                        for="acc3_close"
                         class="accordion-close h-[80px] cursor-pointer"
                       />
                       <div class="accordion-content leading-8 text-base font-medium pt-4 md:pt-6 pr-8 md:pr-16">
@@ -209,7 +209,7 @@ const category_3 = [
                   </>
                 ))
               }
-              <input id="acc_close" type="radio" name="acc" />
+              <input id="acc3_close" type="radio" name="acc3" />
             </div>
           </div>
         </div>
