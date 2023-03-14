@@ -36,6 +36,7 @@ module.exports = {
           200: "#EFEBD9",
           300: "#E5E0C3",
           400: "#F0F4F0",
+          500: "#D9D9D9",
         },
         educational: {
           play: "#C50C7B",

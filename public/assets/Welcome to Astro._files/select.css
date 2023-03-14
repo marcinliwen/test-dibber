@@ -101,20 +101,6 @@
   z-index: -1;
   box-shadow: 0 10px 25px rgba(42, 179, 248, 0.4);
 }
-.dropdown.faq {
-  height: 48px;
-}
-.faq.dropdown::before {
-  top: 15px;
-}
-
-.faq.dropdown.opened::before {
-  top: 21px;
-}
-
-.faq.dropdown .options {
-  top: 48px;
-}
 @media (max-width: 575px) {
   .circle.one {
     width: 160px;

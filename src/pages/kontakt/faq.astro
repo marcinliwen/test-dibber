@@ -1,0 +1,447 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+import Breadcrump from "../../components/Breadcrump.astro";
+import Newsletter from "../../components/Newsletter.astro";
+import HelpSearch from "../../components/HelpSearch.astro";
+
+const category_1 = [
+  {
+    title: "Gdzie znajdę szczegółowe informacje jak się zapisać?",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis.  Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis.  Nunc vulputate libero et velit interdum, ac aliquet odio mattis.",
+  },
+  {
+    title: "Gdzie znajdę szczegółowe informacje jak się zapisać?",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis.  Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis.  Nunc vulputate libero et velit interdum, ac aliquet odio mattis.",
+  },
+];
+const category_2 = [
+  {
+    title: "Gdzie znajdę szczegółowe informacje jak się zapisać?",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis.  Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis.  Nunc vulputate libero et velit interdum, ac aliquet odio mattis.",
+  },
+  {
+    title: "Gdzie znajdę szczegółowe informacje jak się zapisać?",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis.  Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis.  Nunc vulputate libero et velit interdum, ac aliquet odio mattis.",
+  },
+  {
+    title: "Gdzie znajdę szczegółowe informacje jak się zapisać?",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis.  Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis.  Nunc vulputate libero et velit interdum, ac aliquet odio mattis.",
+  },
+];
+const category_3 = [
+  {
+    title: "Gdzie znajdę szczegółowe informacje jak się zapisać?",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis.  Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis.  Nunc vulputate libero et velit interdum, ac aliquet odio mattis.",
+  },
+  {
+    title: "Gdzie znajdę szczegółowe informacje jak się zapisać?",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis.  Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis.  Nunc vulputate libero et velit interdum, ac aliquet odio mattis.",
+  },
+  {
+    title: "Gdzie znajdę szczegółowe informacje jak się zapisać?",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis.  Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis.  Nunc vulputate libero et velit interdum, ac aliquet odio mattis.",
+  },
+  {
+    title: "Gdzie znajdę szczegółowe informacje jak się zapisać?",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis.  Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis.  Nunc vulputate libero et velit interdum, ac aliquet odio mattis.",
+  },
+];
+---
+
+<Layout title="Welcome to Astro.">
+  <Header />
+  <Breadcrump
+    breadcrumps={[
+      {
+        name: "Kontakt",
+        link: "/kontakt",
+      },
+      {
+        name: "Faq",
+        link: "/faq",
+      },
+    ]}
+  />
+  <HelpSearch />
+  <section class="pt-[49px] pb-[109px]">
+    <div class="wrapper">
+      <div class="dibber-container">
+        <div class="md:grid md:grid-cols-3 md:gap-8">
+          <div>
+            <div class="rounded-r_20 px-8 py-10 bg-secondary-300 mb-12">
+              <h5 class="mb-4">Pytania dotyczące zapisów</h5>
+              <p class="leading-[30px]">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
+                vulputate libero et velit interdum, ac aliquet odio mattis. Nunc
+                vulputate libero et velit interdum, ac aliquet odio mattis.
+              </p>
+            </div>
+            <ul class="grid gap-4 mb-12 md:mb-0">
+              <li class="text-2xl font-bold">Kategoria 1</li>
+              <li class="text-2xl font-bold">Kategoria 2</li>
+              <li class="text-2xl font-bold">Kategoria 3</li>
+            </ul>
+          </div>
+          <div class="col-span-2">
+            <h5 class="mb-8">Kategoria 1</h5>
+            <div class="accordion grid gap-8">
+              {
+                category_1.map((item, index) => (
+                  <>
+                    <input type="radio" id={`acc_${index}`} name="acc" />
+                    <div class="accordion-item rounded-lg bg-secondary-200 pl-6 md:pl-[49px]">
+                      <label
+                        for={`acc_${index}`}
+                        class="accordion-title pt-4 md:pt-6 font-semibold text-lg cursor-pointer flex items-center pr-4 md:pr-6"
+                      >
+                        <span class="flex-1">{item.title}</span>
+                        <svg
+                          width="32"
+                          height="32"
+                          viewBox="0 0 32 32"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                          class="ml-auto acccordion-icon"
+                        >
+                          <path
+                            d="M15.9993 5.33342L26.666 16.0001L15.9993 26.6667L14.0993 24.8001L21.566 17.3334L5.33268 17.3334L5.33268 14.6668L21.566 14.6667L14.0993 7.20008L15.9993 5.33342Z"
+                            fill="#094F0C"
+                          />
+                        </svg>
+                      </label>
+                      <label
+                        for="acc_close"
+                        class="accordion-close h-[80px] cursor-pointer"
+                      />
+                      <div class="accordion-content leading-8 text-base font-medium pt-4 md:pt-6 pr-8 md:pr-16">
+                        {item.description}
+                      </div>
+                    </div>
+                  </>
+                ))
+              }
+              <input id="acc_close" type="radio" name="acc" />
+            </div>
+            <h5 class="my-8">Kategoria 2</h5>
+            <div class="accordion grid gap-8">
+              {
+                category_2.map((item, index) => (
+                  <>
+                    <input type="radio" id={`acc_${index}`} name="acc" />
+                    <div class="accordion-item rounded-lg bg-secondary-200 pl-6 md:pl-[49px]">
+                      <label
+                        for={`acc_${index}`}
+                        class="accordion-title pt-4 md:pt-6 font-semibold text-lg cursor-pointer flex items-center pr-4 md:pr-6"
+                      >
+                        <span class="flex-1">{item.title}</span>
+                        <svg
+                          width="32"
+                          height="32"
+                          viewBox="0 0 32 32"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                          class="ml-auto acccordion-icon"
+                        >
+                          <path
+                            d="M15.9993 5.33342L26.666 16.0001L15.9993 26.6667L14.0993 24.8001L21.566 17.3334L5.33268 17.3334L5.33268 14.6668L21.566 14.6667L14.0993 7.20008L15.9993 5.33342Z"
+                            fill="#094F0C"
+                          />
+                        </svg>
+                      </label>
+                      <label
+                        for="acc_close"
+                        class="accordion-close h-[80px] cursor-pointer"
+                      />
+                      <div class="accordion-content leading-8 text-base font-medium pt-4 md:pt-6 pr-8 md:pr-16">
+                        {item.description}
+                      </div>
+                    </div>
+                  </>
+                ))
+              }
+              <input id="acc_close" type="radio" name="acc" />
+            </div>
+            <h5 class="my-8">Kategoria 3</h5>
+            <div class="accordion grid gap-8">
+              {
+                category_3.map((item, index) => (
+                  <>
+                    <input type="radio" id={`acc_${index}`} name="acc" />
+                    <div class="accordion-item rounded-lg bg-secondary-200 pl-6 md:pl-[49px]">
+                      <label
+                        for={`acc_${index}`}
+                        class="accordion-title pt-4 md:pt-6 font-semibold text-lg cursor-pointer flex items-center pr-4 md:pr-6"
+                      >
+                        <span class="flex-1">{item.title}</span>
+                        <svg
+                          width="32"
+                          height="32"
+                          viewBox="0 0 32 32"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                          class="ml-auto acccordion-icon"
+                        >
+                          <path
+                            d="M15.9993 5.33342L26.666 16.0001L15.9993 26.6667L14.0993 24.8001L21.566 17.3334L5.33268 17.3334L5.33268 14.6668L21.566 14.6667L14.0993 7.20008L15.9993 5.33342Z"
+                            fill="#094F0C"
+                          />
+                        </svg>
+                      </label>
+                      <label
+                        for="acc_close"
+                        class="accordion-close h-[80px] cursor-pointer"
+                      />
+                      <div class="accordion-content leading-8 text-base font-medium pt-4 md:pt-6 pr-8 md:pr-16">
+                        {item.description}
+                      </div>
+                    </div>
+                  </>
+                ))
+              }
+              <input id="acc_close" type="radio" name="acc" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="bg-secondary-200 rounded-t-r_20 pb-[118px] pt-[75px] -mb-8">
+    <div class="wrapper">
+      <div class="dibber-container">
+        <div class="md:grid grid-cols-2">
+          <div class="mb-8 md:mb-0 pt-[50px]">
+            <h2 class="lg:text-[54px] lg:leading-[64px] text-left mb-8">
+              Nie widzisz odpowiedzi na pytanie?
+            </h2>
+            <p class="lg:text-2xl font-medium mb-8 md:mb-[84px] w-[28ch]">
+              Gorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
+              vulputate libero et velit interdum, ac aliquet odio mattis. Class
+              aptent taciti sociosqu ad litora torquent per conubia nostra, per
+              inceptos himenaeos.
+            </p>
+            <div class="flex gap-4 items-center mb-4">
+              <svg
+                width="32"
+                height="32"
+                viewBox="0 0 32 32"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M5.00065 26.6667C4.26732 26.6667 3.63976 26.4058 3.11798 25.884C2.59532 25.3614 2.33398 24.7334 2.33398 24V8.00004C2.33398 7.26671 2.59532 6.63915 3.11798 6.11737C3.63976 5.59471 4.26732 5.33337 5.00065 5.33337H26.334C27.0673 5.33337 27.6953 5.59471 28.218 6.11737C28.7398 6.63915 29.0007 7.26671 29.0007 8.00004V24C29.0007 24.7334 28.7398 25.3614 28.218 25.884C27.6953 26.4058 27.0673 26.6667 26.334 26.6667H5.00065ZM15.6673 17.3334L5.00065 10.6667V24H26.334V10.6667L15.6673 17.3334ZM15.6673 14.6667L26.334 8.00004H5.00065L15.6673 14.6667ZM5.00065 10.6667V8.00004V24V10.6667Z"
+                  fill="#094F0C"></path>
+              </svg>
+              <p class="font-bold">zapisy@dibber.pl</p>
+            </div>
+            <div class="flex gap-4 items-center">
+              <svg
+                width="32"
+                height="32"
+                viewBox="0 0 32 32"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M26.6 28C23.7333 28 20.9391 27.3609 18.2173 26.0827C15.4947 24.8053 13.0836 23.1164 10.984 21.016C8.88356 18.9164 7.19467 16.5053 5.91733 13.7827C4.63911 11.0609 4 8.26667 4 5.4C4 5 4.13333 4.66667 4.4 4.4C4.66667 4.13333 5 4 5.4 4H10.8C11.1111 4 11.3889 4.1 11.6333 4.3C11.8778 4.5 12.0222 4.75556 12.0667 5.06667L12.9333 9.73333C12.9778 10.0444 12.9724 10.3276 12.9173 10.5827C12.8613 10.8387 12.7333 11.0667 12.5333 11.2667L9.3 14.5333C10.2333 16.1333 11.4058 17.6333 12.8173 19.0333C14.228 20.4333 15.7778 21.6444 17.4667 22.6667L20.6 19.5333C20.8 19.3333 21.0613 19.1831 21.384 19.0827C21.7058 18.9831 22.0222 18.9556 22.3333 19L26.9333 19.9333C27.2444 20 27.5 20.1498 27.7 20.3827C27.9 20.6164 28 20.8889 28 21.2V26.6C28 27 27.8667 27.3333 27.6 27.6C27.3333 27.8667 27 28 26.6 28ZM8.03333 12L10.2333 9.8L9.66667 6.66667H6.7C6.81111 7.57778 6.96667 8.47778 7.16667 9.36667C7.36667 10.2556 7.65556 11.1333 8.03333 12ZM19.9667 23.9333C20.8333 24.3111 21.7169 24.6111 22.6173 24.8333C23.5169 25.0556 24.4222 25.2 25.3333 25.2667V22.3333L22.2 21.7L19.9667 23.9333Z"
+                  fill="#094F0C"></path>
+              </svg>
+              <p class="font-bold">+48 501 393 891</p>
+            </div>
+          </div>
+          <div>
+            <h3 class="mb-6">Wyślij wiadomość</h3>
+            <div class="flex items-center gap-4 mb-5">
+              <svg
+                width="41"
+                height="41"
+                viewBox="0 0 41 41"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g clip-path="url(#clip0_185_21914)">
+                  <path
+                    d="M8.90039 18.5977C8.90039 12.2796 14.0204 7.15771 20.3366 7.15771C26.6528 7.15771 31.7728 12.2796 31.7728 18.5977"
+                    fill="#005100"></path>
+                  <path
+                    d="M12.8169 9.91016H28.0283C29.0797 9.91016 29.9331 10.7635 29.9331 11.8149V25.9673H10.9121V11.8149C10.9121 10.7635 11.7654 9.91016 12.8169 9.91016Z"
+                    fill="#EFF4F0"></path>
+                  <path
+                    d="M8.90039 17.9788C12.9785 17.9788 16.2832 21.2854 16.2832 25.3635C16.2832 29.4416 12.9785 32.7483 8.90039 32.7483V17.9788Z"
+                    fill="#009B00"></path>
+                  <path
+                    d="M31.7735 32.7501C27.6954 32.7501 24.3906 29.4434 24.3906 25.3654C24.3906 21.2873 27.6954 17.9806 31.7735 17.9806V32.752V32.7501Z"
+                    fill="#009B00"></path>
+                  <path
+                    d="M8.88672 32.7501C8.88672 26.4282 14.0105 21.3025 20.3305 21.3025C26.6505 21.3025 31.7743 26.4282 31.7743 32.7501"
+                    fill="#B4F383"></path>
+                  <path
+                    d="M20.6876 14.3006H13.8781C13.5619 14.3006 13.3066 14.0453 13.3066 13.7291C13.3066 13.413 13.5619 13.1577 13.8781 13.1577H20.6876C21.0038 13.1577 21.259 13.413 21.259 13.7291C21.259 14.0453 21.0038 14.3006 20.6876 14.3006Z"
+                    fill="#005100"></path>
+                  <path
+                    d="M25.1809 16.7425H13.8781C13.5619 16.7425 13.3066 16.4872 13.3066 16.171C13.3066 15.8548 13.5619 15.5996 13.8781 15.5996H25.1809C25.4971 15.5996 25.7524 15.8548 25.7524 16.171C25.7524 16.4872 25.4971 16.7425 25.1809 16.7425Z"
+                    fill="#005100"></path>
+                </g>
+                <defs>
+                  <clipPath id="clip0_185_21914">
+                    <rect width="40.4211" height="40.4211" fill="white"></rect>
+                  </clipPath>
+                </defs>
+              </svg>
+              <p class="md:text-2xl">Twoje dane</p>
+            </div>
+            <form>
+              <div class="select-wrapper !mb-4">
+                <div class="dropdown faq">
+                  <input
+                    type="text"
+                    name="category-select"
+                    placeholder="Wybierz kategorię"
+                    class="w-full pt-[13px] pr-[31px] pb-[14px] pl-[22px] rounded-lg placeholder-primary-400 bg-primary-100 focus:bg-primary-500 focus:outline-none"
+                    readonly
+                  />
+                  <ul class="options">
+                    <li class="option">Kategoria 1</li>
+                    <li class="option">Kategoria 2</li>
+                    <li class="option">Kategoria 3</li>
+                    <li class="option">Kategoria 4</li>
+                  </ul>
+                </div>
+                <div class="circle one"></div>
+              </div>
+              <div class="grid gap-4 mb-7">
+                <input
+                  type="text"
+                  name="name"
+                  class="w-full pt-[13px] pr-[31px] pb-[14px] pl-[22px] rounded-lg border border-primary-400 placeholder-primary-400 bg-primary-100 focus:bg-primary-500 focus:outline-none"
+                  placeholder="Imię i nazwisko"
+                />
+                <input
+                  type="email"
+                  name="mail"
+                  class="w-full pt-[13px] pr-[31px] pb-[14px] pl-[22px] rounded-lg border border-primary-400 placeholder-primary-400 bg-primary-100 focus:bg-primary-500 focus:outline-none"
+                  placeholder="E-mail"
+                />
+                <textarea
+                  name="message"
+                  class="w-full pt-[13px] pr-[31px] pb-[14px] pl-[22px] rounded-lg border border-primary-400 placeholder-primary-400 bg-primary-100 focus:bg-primary-500 focus:outline-none"
+                  placeholder="Wiadomość"
+                  rows="5"></textarea>
+                <label class="cursor-pointer flex gap-4 items-center">
+                  <div class="relative w-6 h-6 group">
+                    <input
+                      name="check-1"
+                      type="checkbox"
+                      class="opacity-0 absolute inset-0 z-30 cursor-pointer peer"
+                    />
+                    <span
+                      class="absolute inset-0 z-20 border border-primary-400 bg-white group-hover:bg-primary-200 rounded-sm opacity-100 peer-checked:opacity-0 transition duration-300 ease-morph"
+                    >
+                    </span>
+                    <span
+                      class="absolute inset-0 z-20 border border-primary-400 bg-primary-200 rounded-sm opacity-0 peer-checked:opacity-100 transition duration-300 ease-morph"
+                      ><svg
+                        width="24"
+                        height="25"
+                        viewBox="0 0 24 25"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <mask
+                          id="mask0_414_398"
+                          style="mask-type:alpha"
+                          maskUnits="userSpaceOnUse"
+                          x="0"
+                          y="0"
+                          width="24"
+                          height="25"
+                        >
+                          <rect
+                            y="0.421021"
+                            width="24"
+                            height="24"
+                            fill="#D9D9D9"></rect>
+                        </mask>
+                        <g mask="url(#mask0_414_398)">
+                          <path
+                            d="M9.54961 18.421L3.84961 12.721L5.27461 11.296L9.54961 15.571L18.7246 6.396L20.1496 7.821L9.54961 18.421Z"
+                            fill="#094F0C"></path>
+                        </g>
+                      </svg>
+                    </span>
+                  </div>
+
+                  <span>Lorem ipsum</span>
+                </label>
+                <label class="cursor-pointer flex gap-4 items-center">
+                  <div class="relative w-6 h-6 group">
+                    <input
+                      name="check-1"
+                      type="checkbox"
+                      class="opacity-0 absolute inset-0 z-30 cursor-pointer peer"
+                    />
+                    <span
+                      class="absolute inset-0 z-20 border border-primary-400 bg-white group-hover:bg-primary-200 rounded-sm opacity-100 peer-checked:opacity-0 transition duration-300 ease-morph"
+                    >
+                    </span>
+                    <span
+                      class="absolute inset-0 z-20 border border-primary-400 bg-primary-200 rounded-sm opacity-0 peer-checked:opacity-100 transition duration-300 ease-morph"
+                      ><svg
+                        width="24"
+                        height="25"
+                        viewBox="0 0 24 25"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <mask
+                          id="mask0_414_398"
+                          style="mask-type:alpha"
+                          maskUnits="userSpaceOnUse"
+                          x="0"
+                          y="0"
+                          width="24"
+                          height="25"
+                        >
+                          <rect
+                            y="0.421021"
+                            width="24"
+                            height="24"
+                            fill="#D9D9D9"></rect>
+                        </mask>
+                        <g mask="url(#mask0_414_398)">
+                          <path
+                            d="M9.54961 18.421L3.84961 12.721L5.27461 11.296L9.54961 15.571L18.7246 6.396L20.1496 7.821L9.54961 18.421Z"
+                            fill="#094F0C"></path>
+                        </g>
+                      </svg>
+                    </span>
+                  </div>
+
+                  <span>Lorem ipsum</span>
+                </label>
+                <button
+                  type="submit"
+                  class="btn primary !py-5 !px-8 !mr-0 max-w-max">Wyślij</button
+                >
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <Footer />
+</Layout>
+<link rel="stylesheet" href="/accordion.css" />
+<link rel="stylesheet" href="/select.css" />
+<script is:inline src="/script.js"></script>
