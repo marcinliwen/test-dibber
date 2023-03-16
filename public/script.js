@@ -86,12 +86,13 @@ window.onload = (event) => {
 
     new Swiper(".hero-swiper", {
       slidesPerView: 1,
+      effect: "fade",
       /* effect: "fade",
     fadeEffect: {
       crossFade: true,
     }, */
       autoplay: {
-        delay: 5000,
+        delay: 4000,
         pauseOnMouseEnter: true,
       },
       pagination: {
