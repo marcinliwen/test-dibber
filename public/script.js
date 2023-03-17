@@ -1,8 +1,15 @@
 window.onload = (event) => {
   console.log("page is fully loaded");
 
-  console.log("I am on home page");
-
+  document.addEventListener("scroll", (event) => {
+    const header = document.getElementById("header");
+    if (header.offsetTop > 1) {
+      header.classList.add("small");
+    } else {
+      header.classList.remove("small");
+    }
+    console.log(header.offsetTop, header.scrollHeight);
+  });
   const tabNav = document.querySelectorAll(".tab-nav button");
   const tabItems = document.querySelectorAll(".tab-item");
   console.log(tabNav);

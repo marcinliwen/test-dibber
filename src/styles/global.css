@@ -138,7 +138,7 @@ h5 {
 .mobile-menu {
   position: fixed;
   left: 0;
-  right: 0;
+  right: -100%;
   top: 0;
   bottom: 0;
   z-index: 100;
@@ -148,6 +148,32 @@ h5 {
   transition-duration: 300ms;
   transition-timing-function: cubic-bezier(0.53, 0, 0.43, 1);
 }
+#header .main-nav {
+  transition-duration: 300ms;
+  transition-timing-function: cubic-bezier(0.53, 0, 0.43, 1);
+}
+#header.small .main-nav {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  transition-duration: 300ms;
+  transition-timing-function: cubic-bezier(0.53, 0, 0.43, 1);
+}
+#header .logo {
+  width: 207px;
+  transition-duration: 300ms;
+  transition-timing-function: cubic-bezier(0.53, 0, 0.43, 1);
+}
+#header.small .logo {
+  width: 170px;
+  transition-duration: 300ms;
+  transition-timing-function: cubic-bezier(0.53, 0, 0.43, 1);
+}
+.mobile-menu > ul::-webkit-scrollbar {
+  width: 2px;
+}
+.mobile-menu > ul::-webkit-scrollbar-thumb {
+  background: #c2f291;
+}
 @media (min-width: 768px) {
   .mobile-menu {
     position: static;
@@ -155,14 +181,21 @@ h5 {
     visibility: visible;
     pointer-events: painted;
   }
+  #header.small .main-nav {
+    padding-top: 24px;
+    padding-bottom: 24px;
+  }
 }
 .modal-toggle:checked + .mobile-menu {
   opacity: 1;
   visibility: visible;
   z-index: 996;
+  right: 0;
   pointer-events: painted;
   overflow-y: hidden;
   overscroll-behavior: contain;
+  transition-duration: 300ms;
+  transition-timing-function: cubic-bezier(0.53, 0, 0.43, 1);
 }
 .drawer {
   display: grid;

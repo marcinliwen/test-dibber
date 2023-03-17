@@ -19,11 +19,11 @@ const menuLinks = [
 ];
 ---
 
-<header>
+<header id="header" class="sticky top-0 md:-top-12 z-50 bg-inherit">
   <div class="bg-primary-400 hidden md:block">
     <div class="wrapper">
       <div
-        class="md:flex justify-between text-secondary-100 gap-8 pt-[11px] pb-[13px] font-medium"
+        class="md:flex justify-between text-secondary-100 gap-8 pt-[11px] pb-[13px] font-medium h-12"
       >
         <a
           href="tel:+48 510 480 260"
@@ -78,15 +78,15 @@ const menuLinks = [
     </div>
   </div>
   <div class="wrapper">
-    <div class="flex items-center w-full pt-12 pb-8 md:pb-12">
-      <div>
+    <div class="flex items-center w-full pt-8 md:pt-12 pb-8 md:pb-12 main-nav">
+      <div class="logo">
         <svg
           width="207"
           height="38"
           viewBox="0 0 207 38"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
-          class="md:hidden desk:block"
+          class="md:hidden desk:block w-full"
         >
           <path
             d="M176.241 15.2161C180.494 15.2161 183.942 11.8098 183.942 7.60803C183.942 3.40623 180.494 0 176.241 0C171.988 0 168.54 3.40623 168.54 7.60803C168.54 11.8098 171.988 15.2161 176.241 15.2161Z"
@@ -138,13 +138,17 @@ const menuLinks = [
         </svg>
       </div>
       <div class="ml-auto">
-        <label for="mobile-menu" class="relative z-20 md:hidden">
+        <label
+          for="mobile-menu"
+          class="relative z-20 md:hidden w-14 h-14 block p-3"
+        >
           <svg
             width="24"
             height="24"
             viewBox="0 0 24 24"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
+            class="w-8 h-8"
           >
             <path
               d="M3 7H21"
@@ -169,7 +173,7 @@ const menuLinks = [
           class="modal-toggle md:hidden"
         />
         <nav
-          class="flex flex-col md:block ml-auto bg-primary-400 md:bg-transparent text-primary-100 md:text-primary-400 w-full p-8 pt-16 md:p-0 mobile-menu"
+          class="flex flex-col md:block ml-auto bg-primary-400 md:bg-transparent text-primary-100 md:text-primary-400 w-full px-8 pt-16 md:p-0 mobile-menu"
         >
           <label for="mobile-menu" class="absolute right-8 top-8 md:hidden"
             ><svg
@@ -197,11 +201,13 @@ const menuLinks = [
               </g>
             </svg>
           </label>
-          <ul class="flex flex-col md:flex-row lg:gap-4">
+          <ul
+            class="flex flex-col md:flex-row lg:gap-4 overflow-y-auto overflow-x-hidden md:overflow-visible"
+          >
             <NavLink menuLinks={menuLinks} />
           </ul>
           <div
-            class="md:hidden mt-auto px-4 flex bg-primary-400 justify-between text-secondary-100 gap-8"
+            class="md:hidden mt-auto px-4 flex bg-primary-400 justify-between text-secondary-100 gap-8 sticky bottom-0"
           >
             <a
               href="tel:+48 510 480 260"
