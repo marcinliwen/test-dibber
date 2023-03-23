@@ -8,19 +8,20 @@ window.onload = (event) => {
     } else {
       header.classList.remove("small");
     }
-    console.log(header.offsetTop, header.scrollHeight);
   });
   const tabNav = document.querySelectorAll(".tab-nav button");
   const tabItems = document.querySelectorAll(".tab-item");
-  console.log(tabNav);
-  tabNav.forEach((el, index) => {
-    el.addEventListener("click", function (event) {
-      tabNav.forEach((item) => item.classList.remove("active"));
-      tabItems.forEach((item) => item.classList.remove("active"));
-      tabNav[index].classList.add("active");
-      tabItems[index].classList.add("active");
+  if (typeof tabNav !== undefined && typeof tabItems !== undefined) {
+    tabNav.forEach((el, index) => {
+      el.addEventListener("click", function (event) {
+        tabNav.forEach((item) => item.classList.remove("active"));
+        tabItems.forEach((item) => item.classList.remove("active"));
+        tabNav[index].classList.add("active");
+        tabItems[index].classList.add("active");
+      });
     });
-  });
+  }
+
   if (typeof Swiper !== "undefined") {
     new Swiper(".blog-home-swiper", {
       slidesPerView: 1,
@@ -55,9 +56,14 @@ window.onload = (event) => {
         prevEl: ".blog-prev",
       },
     });
-    new Swiper(".review-swiper", {
+    const reviewSwiper = new Swiper(".review-swiper", {
       slidesPerView: 1,
       spaceBetween: 32,
+      autoplay: {
+        delay: 4000,
+        disableOnInteraction: true,
+        pauseOnMouseEnter: true,
+      },
       pagination: {
         enabled: false,
       },
@@ -90,8 +96,14 @@ window.onload = (event) => {
         prevEl: ".review-prev",
       },
     });
+    document
+      .querySelector(".review-swiper")
+      .addEventListener("mouseleave", () => {
+        console.log("mouse leav");
+        reviewSwiper.autoplay.start();
+      });
 
-    new Swiper(".hero-swiper", {
+    const heroSwiper = new Swiper(".hero-swiper", {
       slidesPerView: 1,
       effect: "fade",
       /* effect: "fade",
@@ -100,6 +112,7 @@ window.onload = (event) => {
     }, */
       autoplay: {
         delay: 4000,
+        disableOnInteraction: true,
         pauseOnMouseEnter: true,
       },
       pagination: {
@@ -117,6 +130,56 @@ window.onload = (event) => {
         },
       },
     });
+
+    document
+      .querySelector(".hero-swiper")
+      .addEventListener("mouseleave", () => {
+        console.log("mouse leav");
+        heroSwiper.autoplay.start();
+      });
+
+    const tabSwiperTitles = [
+      "Międzynarodowe przedszkole",
+      "Skandynawski program nauczania",
+      "Podejście wielojęzykowe",
+    ];
+    const tabSwiper = new Swiper(".tab-swiper", {
+      slidesPerView: 1,
+      spaceBetween: 32,
+      effect: "fade",
+      fadeEffect: {
+        crossFade: true,
+      },
+      autoplay: {
+        delay: 6000,
+        disableOnInteraction: true,
+      },
+      pagination: {
+        enabled: true,
+        el: ".tab-pagination",
+        clickable: true,
+        renderBullet: function (index, className) {
+          return (
+            "<button class='" +
+            className +
+            "'>" +
+            tabSwiperTitles[index] +
+            ".</button>"
+          );
+        },
+      },
+    });
+    const tabPagination = document.querySelector(".tab-pagination");
+    if (tabPagination && tabSwiper) {
+      tabPagination.addEventListener("mouseleave", () => {
+        console.log("mouse leav");
+        tabSwiper.autoplay.start();
+      });
+      tabPagination.addEventListener("mouseenter", () => {
+        console.log("mouse enter");
+        tabSwiper.autoplay.stop();
+      });
+    }
   }
   var playButton = document.getElementById("play_button");
   // Event listener for the play/pause button
@@ -143,7 +206,8 @@ window.onload = (event) => {
   };
 
   const selectOption = (event) => {
-    input.value = event.currentTarget.textContent;
+    console.log(event.currentTarget.textContent);
+    input.setAttribute("value", event.currentTarget.textContent);
   };
 
   const closeDropdownFromOutside = () => {

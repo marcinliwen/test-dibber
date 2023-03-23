@@ -13,7 +13,8 @@ window.onload = (event) => {
   };
 
   const selectOption = (event) => {
-    input.value = event.currentTarget.textContent;
+    console.log(event.currentTarget);
+    input.setAttribute("value", event.currentTarget.textContent);
   };
 
   const closeDropdownFromOutside = () => {
