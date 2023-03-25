@@ -60,12 +60,22 @@ const places = [
         </div>
         <form id="filters">
           <div class="md:flex gap-4">
-            <input
-              class="mb-5 md:mb-0 w-full py-[22px] pr-[31px] pl-[39px] rounded-lg border border-primary-400 placeholder-primary-400 bg-primary-100 focus:bg-primary-500 focus:outline-none"
-              type="text"
-              name="city"
-              placeholder="Wybierz miasto"
-            />
+            <div class="dropdown cities">
+              <input type="hidden" name="categoryId" value="" id="hidden" />
+              <input
+                type="text"
+                id="input-cities"
+                placeholder="Wybierz miasto"
+                class="w-full py-[22px] pr-[31px] pl-[39px] rounded-lg placeholder-primary-400 bg-primary-100 focus:bg-primary-500 focus:outline-none"
+              />
+
+              <ul class="options">
+                <li class="option" data-value="0">Wszystkie</li>
+                <li class="option" data-value="1">Warszawa</li>
+                <li class="option" data-value="2">Wilanów</li>
+                <li class="option" data-value="3">Gdańsk</li>
+              </ul>
+            </div>
             <button
               class="!mr-0 md:mr-auto btn bg-primary-200 hover:bg-primary-400 hover:text-primary-200"
               type="submit">Szukaj</button

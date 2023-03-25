@@ -87,129 +87,184 @@ const category_3 = [
                 vulputate libero et velit interdum, ac aliquet odio mattis.
               </p>
             </div>
-            <ul class="grid gap-4 mb-12 md:mb-0">
-              <li class="text-2xl font-bold">Kategoria 1</li>
-              <li class="text-2xl font-bold">Kategoria 2</li>
-              <li class="text-2xl font-bold">Kategoria 3</li>
+            <ul class="grid gap-2 md:gap-4 mb-12 md:mb-0 faq-category-nav">
+              <li class="text-lg md:text-2xl font-bold">
+                <button
+                  class="active flex items-center justify-center md:justify-between w-full group bg-transparent hover:bg-primary-200 rounded-lg px-4 md:px-8 py-2 md:py-4 transition-color transition-morph duration-300"
+                  ><span>Placówka i jej teren</span>
+                  <svg
+                    width="32"
+                    height="32"
+                    viewBox="0 0 32 32"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="ml-auto opacity-0 group-hover:opacity-100 transition-opacity transition-morph duration-300 hidden md:block"
+                  >
+                    <path
+                      d="M15.9993 5.33342L26.666 16.0001L15.9993 26.6667L14.0993 24.8001L21.566 17.3334L5.33268 17.3334L5.33268 14.6668L21.566 14.6667L14.0993 7.20008L15.9993 5.33342Z"
+                      fill="#094F0C"></path>
+                  </svg></button
+                >
+              </li>
+              <li class="text-lg md:text-2xl font-bold">
+                <button
+                  class="flex items-center justify-center md:justify-between w-full group bg-transparent hover:bg-primary-200 rounded-lg px-4 md:px-8 py-2 md:py-4 transition-color transition-morph duration-300"
+                  ><span>Biezaca organizacja</span><svg
+                    width="32"
+                    height="32"
+                    viewBox="0 0 32 32"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="ml-auto opacity-0 group-hover:opacity-100 transition-opacity transition-morph duration-300 hidden md:block"
+                  >
+                    <path
+                      d="M15.9993 5.33342L26.666 16.0001L15.9993 26.6667L14.0993 24.8001L21.566 17.3334L5.33268 17.3334L5.33268 14.6668L21.566 14.6667L14.0993 7.20008L15.9993 5.33342Z"
+                      fill="#094F0C"></path>
+                  </svg></button
+                >
+              </li>
+              <li class="text-lg md:text-2xl font-bold">
+                <button
+                  class="flex items-center justify-center md:justify-between w-full group bg-transparent hover:bg-primary-200 rounded-lg px-4 md:px-8 py-2 md:py-4 transition-color transition-morph duration-300"
+                  ><span>Kategory 3</span><svg
+                    width="32"
+                    height="32"
+                    viewBox="0 0 32 32"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="ml-auto opacity-0 group-hover:opacity-100 transition-opacity transition-morph duration-300 hidden md:block"
+                  >
+                    <path
+                      d="M15.9993 5.33342L26.666 16.0001L15.9993 26.6667L14.0993 24.8001L21.566 17.3334L5.33268 17.3334L5.33268 14.6668L21.566 14.6667L14.0993 7.20008L15.9993 5.33342Z"
+                      fill="#094F0C"></path>
+                  </svg></button
+                >
+              </li>
             </ul>
           </div>
-          <div class="col-span-2">
-            <h5 class="mb-8">Kategoria 1</h5>
-            <div class="accordion grid gap-8">
-              {
-                category_1.map((item, index) => (
-                  <>
-                    <input type="radio" id={`acc1_${index}`} name="acc1" />
-                    <div class="accordion-item rounded-lg bg-secondary-200 pl-6 md:pl-[49px]">
-                      <label
-                        for={`acc1_${index}`}
-                        class="accordion-title pt-4 md:pt-6 font-semibold text-lg cursor-pointer flex items-center pr-4 md:pr-6"
-                      >
-                        <span class="flex-1">{item.title}</span>
-                        <svg
-                          width="32"
-                          height="32"
-                          viewBox="0 0 32 32"
-                          fill="none"
-                          xmlns="http://www.w3.org/2000/svg"
-                          class="ml-auto acccordion-icon"
+          <div class="col-span-2 faq-category-contet">
+            <div class="category-item active">
+              <h5 class="mb-8">Kategoria 1</h5>
+              <div class="accordion grid gap-8">
+                {
+                  category_1.map((item, index) => (
+                    <>
+                      <input type="radio" id={`acc1_${index}`} name="acc1" />
+                      <div class="accordion-item rounded-lg bg-secondary-200 pl-6 md:pl-[49px]">
+                        <label
+                          for={`acc1_${index}`}
+                          class="accordion-title pt-4 md:pt-6 font-semibold text-base md:text-lg cursor-pointer flex items-center pr-4 md:pr-6"
                         >
-                          <path
-                            d="M15.9993 5.33342L26.666 16.0001L15.9993 26.6667L14.0993 24.8001L21.566 17.3334L5.33268 17.3334L5.33268 14.6668L21.566 14.6667L14.0993 7.20008L15.9993 5.33342Z"
-                            fill="#094F0C"
-                          />
-                        </svg>
-                      </label>
-                      <label
-                        for="acc_close"
-                        class="accordion-close h-[80px] cursor-pointer"
-                      />
-                      <div class="accordion-content leading-8 text-base font-medium pt-4 md:pt-6 pr-8 md:pr-16">
-                        {item.description}
+                          <span class="flex-1">{item.title}</span>
+                          <svg
+                            width="32"
+                            height="32"
+                            viewBox="0 0 32 32"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                            class="ml-auto acccordion-icon"
+                          >
+                            <path
+                              d="M15.9993 5.33342L26.666 16.0001L15.9993 26.6667L14.0993 24.8001L21.566 17.3334L5.33268 17.3334L5.33268 14.6668L21.566 14.6667L14.0993 7.20008L15.9993 5.33342Z"
+                              fill="#094F0C"
+                            />
+                          </svg>
+                        </label>
+                        <label
+                          for="acc_close"
+                          class="accordion-close h-[80px] cursor-pointer"
+                        />
+                        <div class="accordion-content leading-8 text-base font-medium pt-4 md:pt-6 pr-8 md:pr-16">
+                          {item.description}
+                        </div>
                       </div>
-                    </div>
-                  </>
-                ))
-              }
-              <input id="acc_close" type="radio" name="acc1" />
+                    </>
+                  ))
+                }
+                <input id="acc_close" type="radio" name="acc1" />
+              </div>
             </div>
-            <h5 class="my-8">Kategoria 2</h5>
-            <div class="accordion grid gap-8">
-              {
-                category_2.map((item, index) => (
-                  <>
-                    <input type="radio" id={`acc2_${index}`} name="acc2" />
-                    <div class="accordion-item rounded-lg bg-secondary-200 pl-6 md:pl-[49px]">
-                      <label
-                        for={`acc2_${index}`}
-                        class="accordion-title pt-4 md:pt-6 font-semibold text-lg cursor-pointer flex items-center pr-4 md:pr-6"
-                      >
-                        <span class="flex-1">{item.title}</span>
-                        <svg
-                          width="32"
-                          height="32"
-                          viewBox="0 0 32 32"
-                          fill="none"
-                          xmlns="http://www.w3.org/2000/svg"
-                          class="ml-auto acccordion-icon"
+            <div class="category-item">
+              <h5 class="mb-8">Kategoria 2</h5>
+              <div class="accordion grid gap-8">
+                {
+                  category_2.map((item, index) => (
+                    <>
+                      <input type="radio" id={`acc2_${index}`} name="acc2" />
+                      <div class="accordion-item rounded-lg bg-secondary-200 pl-6 md:pl-[49px]">
+                        <label
+                          for={`acc2_${index}`}
+                          class="accordion-title pt-4 md:pt-6 font-semibold text-base md:text-lg cursor-pointer flex items-center pr-4 md:pr-6"
                         >
-                          <path
-                            d="M15.9993 5.33342L26.666 16.0001L15.9993 26.6667L14.0993 24.8001L21.566 17.3334L5.33268 17.3334L5.33268 14.6668L21.566 14.6667L14.0993 7.20008L15.9993 5.33342Z"
-                            fill="#094F0C"
-                          />
-                        </svg>
-                      </label>
-                      <label
-                        for="acc2_close"
-                        class="accordion-close h-[80px] cursor-pointer"
-                      />
-                      <div class="accordion-content leading-8 text-base font-medium pt-4 md:pt-6 pr-8 md:pr-16">
-                        {item.description}
+                          <span class="flex-1">{item.title}</span>
+                          <svg
+                            width="32"
+                            height="32"
+                            viewBox="0 0 32 32"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                            class="ml-auto acccordion-icon"
+                          >
+                            <path
+                              d="M15.9993 5.33342L26.666 16.0001L15.9993 26.6667L14.0993 24.8001L21.566 17.3334L5.33268 17.3334L5.33268 14.6668L21.566 14.6667L14.0993 7.20008L15.9993 5.33342Z"
+                              fill="#094F0C"
+                            />
+                          </svg>
+                        </label>
+                        <label
+                          for="acc2_close"
+                          class="accordion-close h-[80px] cursor-pointer"
+                        />
+                        <div class="accordion-content leading-8 text-base font-medium pt-4 md:pt-6 pr-8 md:pr-16">
+                          {item.description}
+                        </div>
                       </div>
-                    </div>
-                  </>
-                ))
-              }
-              <input id="acc2_close" type="radio" name="acc2" />
+                    </>
+                  ))
+                }
+                <input id="acc2_close" type="radio" name="acc2" />
+              </div>
             </div>
-            <h5 class="my-8">Kategoria 3</h5>
-            <div class="accordion grid gap-8">
-              {
-                category_3.map((item, index) => (
-                  <>
-                    <input type="radio" id={`acc3_${index}`} name="acc3" />
-                    <div class="accordion-item rounded-lg bg-secondary-200 pl-6 md:pl-[49px]">
-                      <label
-                        for={`acc3_${index}`}
-                        class="accordion-title pt-4 md:pt-6 font-semibold text-lg cursor-pointer flex items-center pr-4 md:pr-6"
-                      >
-                        <span class="flex-1">{item.title}</span>
-                        <svg
-                          width="32"
-                          height="32"
-                          viewBox="0 0 32 32"
-                          fill="none"
-                          xmlns="http://www.w3.org/2000/svg"
-                          class="ml-auto acccordion-icon"
+            <div class="category-item">
+              <h5 class="mb-8">Kategoria 3</h5>
+              <div class="accordion grid gap-8">
+                {
+                  category_3.map((item, index) => (
+                    <>
+                      <input type="radio" id={`acc3_${index}`} name="acc3" />
+                      <div class="accordion-item rounded-lg bg-secondary-200 pl-6 md:pl-[49px]">
+                        <label
+                          for={`acc3_${index}`}
+                          class="accordion-title pt-4 md:pt-6 font-semibold text-base md:text-lg cursor-pointer flex items-center pr-4 md:pr-6"
                         >
-                          <path
-                            d="M15.9993 5.33342L26.666 16.0001L15.9993 26.6667L14.0993 24.8001L21.566 17.3334L5.33268 17.3334L5.33268 14.6668L21.566 14.6667L14.0993 7.20008L15.9993 5.33342Z"
-                            fill="#094F0C"
-                          />
-                        </svg>
-                      </label>
-                      <label
-                        for="acc3_close"
-                        class="accordion-close h-[80px] cursor-pointer"
-                      />
-                      <div class="accordion-content leading-8 text-base font-medium pt-4 md:pt-6 pr-8 md:pr-16">
-                        {item.description}
+                          <span class="flex-1">{item.title}</span>
+                          <svg
+                            width="32"
+                            height="32"
+                            viewBox="0 0 32 32"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                            class="ml-auto acccordion-icon"
+                          >
+                            <path
+                              d="M15.9993 5.33342L26.666 16.0001L15.9993 26.6667L14.0993 24.8001L21.566 17.3334L5.33268 17.3334L5.33268 14.6668L21.566 14.6667L14.0993 7.20008L15.9993 5.33342Z"
+                              fill="#094F0C"
+                            />
+                          </svg>
+                        </label>
+                        <label
+                          for="acc3_close"
+                          class="accordion-close h-[80px] cursor-pointer"
+                        />
+                        <div class="accordion-content leading-8 text-base font-medium pt-4 md:pt-6 pr-8 md:pr-16">
+                          {item.description}
+                        </div>
                       </div>
-                    </div>
-                  </>
-                ))
-              }
-              <input id="acc3_close" type="radio" name="acc3" />
+                    </>
+                  ))
+                }
+                <input id="acc3_close" type="radio" name="acc3" />
+              </div>
             </div>
           </div>
         </div>

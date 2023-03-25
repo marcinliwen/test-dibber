@@ -15,20 +15,20 @@
       </div>
       <form>
         <div class="select-wrapper">
-          <div class="dropdown">
+          <div class="dropdown places">
+            <input type="hidden" id="hidden" name="categoryName" value="" />
             <input
               type="text"
-              name="placówka"
+              id="input-places"
               placeholder="Placówka"
               class="w-full py-[22px] pr-[31px] pl-[39px] rounded-lg placeholder-primary-400 bg-primary-100 focus:bg-primary-500 focus:outline-none"
-              readonly
-              value=""
             />
+
             <ul class="options">
-              <li class="option">Placówka 1</li>
-              <li class="option">Placówka 2</li>
-              <li class="option">Placówka 3</li>
-              <li class="option">Placówka 4</li>
+              <li class="option" data-value="1">Placówka 1</li>
+              <li class="option" data-value="2">Placówka 2</li>
+              <li class="option" data-value="3">Placówka 3</li>
+              <li class="option" data-value="4">Placówka 4</li>
             </ul>
           </div>
           <div class="circle one"></div>
