@@ -577,3 +577,162 @@ h5 {
     width: 50%;
   }
 }
+
+.animation-scale svg {
+  position: absolute;
+  left: 0;
+  height: 76px;
+}
+
+.animation-scale {
+  min-height: 76px;
+  position: relative;
+}
+
+.animation-scale svg:nth-child(n + 2) {
+  transform: scale(0.4);
+}
+@keyframes morph-icon-horisontal-1 {
+  0% {
+    transform: scale(0.4);
+    left: 0px;
+  }
+  50% {
+    transform: scale(1);
+    left: 93px;
+  }
+  100% {
+    transform: scale(1);
+    left: 93px;
+  }
+}
+
+@keyframes morph-icon-horisontal-2 {
+  0% {
+    transform: scale(0.4);
+    left: 0px;
+  }
+  50% {
+    transform: scale(0.4);
+    left: 93px;
+  }
+  100% {
+    transform: scale(1);
+    left: 178px;
+  }
+}
+.animation-scale.is-visible svg:nth-child(2) {
+  animation-name: morph-icon-horisontal-1;
+  animation-duration: 600ms;
+  animation-delay: 300ms;
+  transform: scale(1);
+  left: 93px;
+}
+.animation-scale.is-visible svg:nth-child(3) {
+  animation-name: morph-icon-horisontal-2;
+  animation-duration: 600ms;
+  animation-delay: 300ms;
+  transform: scale(1);
+  left: 178px;
+}
+@media (min-width: 768px) {
+  .animation-scale {
+    position: relative;
+    min-width: 127px;
+  }
+
+  .animation-scale svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 127px;
+    height: 106px;
+    transition-delay: 600ms;
+  }
+  .animation-scale svg:nth-child(n + 2) {
+    transform: scale(0.4);
+    transition-delay: 600ms;
+  }
+  @keyframes morph-icon-1 {
+    0% {
+      transform: scale(0.4);
+      top: 0px;
+    }
+    50% {
+      transform: scale(1);
+      top: 127px;
+    }
+    100% {
+      transform: scale(1);
+      top: 127px;
+    }
+  }
+
+  @keyframes morph-icon-2 {
+    0% {
+      transform: scale(0.4);
+      top: 0px;
+    }
+    50% {
+      transform: scale(0.4);
+      top: 127px;
+    }
+    100% {
+      transform: scale(1);
+      top: 255px;
+    }
+  }
+
+  .animation-scale.is-visible svg:nth-child(2) {
+    animation-name: morph-icon-1;
+    animation-duration: 600ms;
+    animation-delay: 300ms;
+    transform: scale(1);
+    top: 127px;
+    left: auto;
+  }
+  .animation-scale.is-visible svg:nth-child(3) {
+    animation-name: morph-icon-2;
+    animation-duration: 600ms;
+    animation-delay: 300ms;
+    transform: scale(1);
+    top: 255px;
+    left: auto;
+  }
+}
+.thumb {
+  box-shadow: 0 0 6px 3px #00000036;
+  border-radius: 100%;
+  cursor: pointer;
+  transition: transform, box-shadow cubic-bezier(0.53, 0, 0.43, 1) 300ms;
+}
+.thumb:hover {
+  box-shadow: 0 0 6px 4px #00000036;
+}
+.thumb:active {
+  box-shadow: 0 0 6px 2px #00000036;
+}
+.rotate-center {
+  -webkit-animation: rotate-center 0.6s ease-in-out both 300ms;
+  animation: rotate-center 0.6s ease-in-out both 300ms;
+}
+@-webkit-keyframes rotate-center {
+  0% {
+    -webkit-transform: rotate(0);
+    transform: rotate(0);
+  }
+  100% {
+    -webkit-transform: rotate(720deg);
+    transform: rotate(720deg);
+  }
+}
+@keyframes rotate-center {
+  0% {
+    -webkit-transform: rotate(0);
+    transform: rotate(0);
+  }
+  100% {
+    -webkit-transform: rotate(720deg);
+    transform: rotate(720deg);
+  }
+}

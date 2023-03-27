@@ -1,4 +1,74 @@
 window.onload = (event) => {
+  let options = {
+    threshold: 1.0,
+  };
+  let callback = (entries, observer) => {
+    entries.forEach((entry) => {
+      if (entry.intersectionRatio === 1) {
+        entry.target.classList.add("is-visible");
+      } else {
+        entry.target.classList.remove("is-visible");
+      }
+    });
+  };
+  let observer = new IntersectionObserver(callback, options);
+  let target = document.querySelector("#isVisible");
+  if (target) {
+    observer.observe(target);
+  }
+
+  let slider = document.querySelector(".slide-move");
+
+  if (slider) {
+    let thumb = slider.querySelector(".thumb");
+    let tabs1 = document.querySelectorAll(".tab-1");
+    let tab2 = document.querySelector(".tab-2");
+    thumb.onmousedown = function (event) {
+      event.preventDefault(); // prevent selection start (browser action)
+
+      let shiftY = event.clientY - thumb.getBoundingClientRect().top;
+      // shiftY not needed, the thumb moves only horizontally
+
+      document.addEventListener("mousemove", onMouseMove);
+      document.addEventListener("mouseup", onMouseUp);
+
+      function onMouseMove(event) {
+        let newTop =
+          event.clientY - shiftY - slider.getBoundingClientRect().top;
+
+        // the pointer is out of slider => lock the thumb within the bounaries
+        if (newTop < 0) {
+          newTop = 0;
+        }
+        let bottomEdge =
+          slider.offsetHeight - 52 - thumb.getBoundingClientRect().height;
+
+        if (newTop > bottomEdge) {
+          thumb.classList.add("rotate-center");
+          newTop = bottomEdge;
+        } else {
+          thumb.classList.remove("rotate-center");
+        }
+        tabs1.forEach((item) => {
+          let counter = 100 - newTop / 2;
+          item.style.opacity = counter / 100;
+        });
+        tab2.style.opacity = newTop / 2 / 100;
+        console.log("newTop.", newTop / 2);
+        thumb.style.top = newTop + "px";
+      }
+
+      function onMouseUp() {
+        document.removeEventListener("mouseup", onMouseUp);
+        document.removeEventListener("mousemove", onMouseMove);
+      }
+    };
+
+    thumb.ondragstart = function () {
+      return false;
+    };
+  }
+
   var scrollPos = 0;
   const contactBar = document.getElementById("contact-bar");
   console.log(contactBar);
