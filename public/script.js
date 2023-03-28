@@ -18,17 +18,16 @@ window.onload = (event) => {
   }
 
   let slider = document.querySelector(".slide-move");
-
-  if (slider) {
+  console.log(slider.getBoundingClientRect().height);
+  if (slider && slider.getBoundingClientRect().height > 96) {
     let thumb = slider.querySelector(".thumb");
-    let tabs1 = document.querySelectorAll(".tab-1");
+    let tab1 = document.querySelector(".tab-1");
     let tab2 = document.querySelector(".tab-2");
     thumb.onmousedown = function (event) {
       event.preventDefault(); // prevent selection start (browser action)
 
       let shiftY = event.clientY - thumb.getBoundingClientRect().top;
-      // shiftY not needed, the thumb moves only horizontally
-
+      console.log("event.clientY", event.clientY);
       document.addEventListener("mousemove", onMouseMove);
       document.addEventListener("mouseup", onMouseUp);
 
@@ -45,22 +44,71 @@ window.onload = (event) => {
 
         if (newTop > bottomEdge) {
           thumb.classList.add("rotate-center");
+          tab2.style.zIndex = "20";
           newTop = bottomEdge;
         } else {
+          tab2.style.zIndex = "1";
           thumb.classList.remove("rotate-center");
         }
-        tabs1.forEach((item) => {
-          let counter = 100 - newTop / 2;
-          item.style.opacity = counter / 100;
-        });
+
+        let counter = 100 - newTop / 2;
+        tab1.style.opacity = counter / 100;
+
         tab2.style.opacity = newTop / 2 / 100;
-        console.log("newTop.", newTop / 2);
         thumb.style.top = newTop + "px";
       }
 
       function onMouseUp() {
         document.removeEventListener("mouseup", onMouseUp);
         document.removeEventListener("mousemove", onMouseMove);
+      }
+    };
+
+    thumb.ondragstart = function () {
+      return false;
+    };
+  }
+  if (slider && slider.getBoundingClientRect().height < 97) {
+    let thumb = slider.querySelector(".thumb");
+    let tab1 = document.querySelector(".tab-1");
+    let tab2 = document.querySelector(".tab-2");
+    thumb.onpointerdown = function (event) {
+      event.preventDefault(); // prevent selection start (browser action)
+
+      let shiftX = Math.round(event.x) - thumb.getBoundingClientRect().left;
+      document.addEventListener("pointermove", onMouseMove);
+      document.addEventListener("pointerout", onMouseUp);
+
+      function onMouseMove(event) {
+        let newLeft =
+          Math.round(event.x) - shiftX - slider.getBoundingClientRect().left;
+
+        // the pointer is out of slider => lock the thumb within the bounaries
+        if (newLeft < 0) {
+          newLeft = 0;
+        }
+        let rightEdge =
+          slider.offsetWidth - 52 - thumb.getBoundingClientRect().width;
+        if (newLeft > rightEdge) {
+          thumb.classList.add("rotate-center");
+          tab2.style.zIndex = "20";
+          newLeft = rightEdge;
+        } else {
+          tab2.style.zIndex = "1";
+          thumb.classList.remove("rotate-center");
+        }
+
+        let counter = 100 - newLeft / 2;
+        tab1.style.opacity = counter / 100;
+
+        tab2.style.opacity = newLeft / 2 / 100;
+
+        thumb.style.left = newLeft + "px";
+      }
+
+      function onMouseUp() {
+        document.removeEventListener("pointerout", onMouseUp);
+        document.removeEventListener("pointermove", onMouseMove);
       }
     };
 
