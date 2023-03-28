@@ -130,12 +130,7 @@ h5 {
     line-height: 72px;
   }
 }
-@media (min-width: 1536px) {
-  h1 {
-    font-size: 72px;
-    line-height: 72px;
-  }
-}
+
 .dibber-container {
   max-width: 1089px;
   margin-left: auto;
@@ -441,7 +436,7 @@ h5 {
 }
 @media (min-width: 629px) {
   .filter-box.open {
-    height: 231px;
+    height: 399px;
   }
 }
 @media (min-width: 868px) {
@@ -577,137 +572,32 @@ h5 {
     width: 50%;
   }
 }
-
 .animation-scale svg {
-  position: absolute;
-  left: 0;
-  height: 76px;
+  transform: scale(0);
+  transition: transform 300ms cubic-bezier(0.53, 0, 0.43, 1) 600ms;
 }
-
-.animation-scale {
-  min-height: 76px;
-  position: relative;
-}
-
-.animation-scale svg:nth-child(n + 2) {
-  transform: scale(0.4);
-}
-@keyframes morph-icon-horisontal-1 {
-  0% {
-    transform: scale(0.4);
-    left: 0px;
-  }
-  50% {
-    transform: scale(1);
-    left: 93px;
-  }
-  100% {
-    transform: scale(1);
-    left: 93px;
-  }
-}
-
-@keyframes morph-icon-horisontal-2 {
-  0% {
-    transform: scale(0.4);
-    left: 0px;
-  }
-  50% {
-    transform: scale(0.4);
-    left: 93px;
-  }
-  100% {
-    transform: scale(1);
-    left: 178px;
-  }
+.animation-scale.is-visible svg:nth-child(1) {
+  transform: scale(1);
+  transition: transform 300ms cubic-bezier(0.53, 0, 0.43, 1);
 }
 .animation-scale.is-visible svg:nth-child(2) {
-  animation-name: morph-icon-horisontal-1;
-  animation-duration: 600ms;
-  animation-delay: 300ms;
   transform: scale(1);
-  left: 93px;
+  transition: transform 300ms cubic-bezier(0.53, 0, 0.43, 1) 300ms;
 }
 .animation-scale.is-visible svg:nth-child(3) {
-  animation-name: morph-icon-horisontal-2;
-  animation-duration: 600ms;
-  animation-delay: 300ms;
   transform: scale(1);
-  left: 178px;
-}
-@media (min-width: 768px) {
-  .animation-scale {
-    position: relative;
-    min-width: 127px;
-  }
-
-  .animation-scale svg {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 127px;
-    height: 106px;
-    transition-delay: 600ms;
-  }
-  .animation-scale svg:nth-child(n + 2) {
-    transform: scale(0.4);
-    transition-delay: 600ms;
-  }
-  @keyframes morph-icon-1 {
-    0% {
-      transform: scale(0.4);
-      top: 0px;
-    }
-    50% {
-      transform: scale(1);
-      top: 127px;
-    }
-    100% {
-      transform: scale(1);
-      top: 127px;
-    }
-  }
-
-  @keyframes morph-icon-2 {
-    0% {
-      transform: scale(0.4);
-      top: 0px;
-    }
-    50% {
-      transform: scale(0.4);
-      top: 127px;
-    }
-    100% {
-      transform: scale(1);
-      top: 255px;
-    }
-  }
-
-  .animation-scale.is-visible svg:nth-child(2) {
-    animation-name: morph-icon-1;
-    animation-duration: 600ms;
-    animation-delay: 300ms;
-    transform: scale(1);
-    top: 127px;
-    left: auto;
-  }
-  .animation-scale.is-visible svg:nth-child(3) {
-    animation-name: morph-icon-2;
-    animation-duration: 600ms;
-    animation-delay: 300ms;
-    transform: scale(1);
-    top: 255px;
-    left: auto;
-  }
+  transition: transform 300ms cubic-bezier(0.53, 0, 0.43, 1) 600ms;
 }
 .thumb {
-  box-shadow: 0 0 6px 3px #00000036;
+  box-shadow: 0 0 8px 2px #00000036;
   border-radius: 100%;
   cursor: pointer;
   transition: transform, box-shadow cubic-bezier(0.53, 0, 0.43, 1) 300ms;
+  cursor: w-resize;
 }
 .thumb:hover {
-  box-shadow: 0 0 6px 4px #00000036;
+  box-shadow: 0 0 12px 2px #00000036;
+  transition: transform, box-shadow cubic-bezier(0.53, 0, 0.43, 1) 300ms;
 }
 .thumb:active {
   box-shadow: 0 0 6px 2px #00000036;
@@ -715,6 +605,11 @@ h5 {
 .rotate-center {
   -webkit-animation: rotate-center 0.6s ease-in-out both 300ms;
   animation: rotate-center 0.6s ease-in-out both 300ms;
+}
+@media (min-width: 768px) {
+  .thumb {
+    cursor: s-resize;
+  }
 }
 @-webkit-keyframes rotate-center {
   0% {
@@ -735,4 +630,28 @@ h5 {
     -webkit-transform: rotate(720deg);
     transform: rotate(720deg);
   }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.19);
+  }
+
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 10px rgba(0, 0, 0, 0);
+  }
+
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+  }
+}
+.pulse {
+  animation: pulse 2s infinite;
+  box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.19);
+}
+.pulse:hover {
+  animation: 0ms;
 }

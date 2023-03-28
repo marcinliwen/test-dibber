@@ -18,7 +18,6 @@ window.onload = (event) => {
   }
 
   let slider = document.querySelector(".slide-move");
-  console.log(slider.getBoundingClientRect().height);
   if (slider && slider.getBoundingClientRect().height > 96) {
     let thumb = slider.querySelector(".thumb");
     let tab1 = document.querySelector(".tab-1");
@@ -43,12 +42,10 @@ window.onload = (event) => {
           slider.offsetHeight - 52 - thumb.getBoundingClientRect().height;
 
         if (newTop > bottomEdge) {
-          thumb.classList.add("rotate-center");
           tab2.style.zIndex = "20";
           newTop = bottomEdge;
         } else {
           tab2.style.zIndex = "1";
-          thumb.classList.remove("rotate-center");
         }
 
         let counter = 100 - newTop / 2;
@@ -90,12 +87,10 @@ window.onload = (event) => {
         let rightEdge =
           slider.offsetWidth - 52 - thumb.getBoundingClientRect().width;
         if (newLeft > rightEdge) {
-          thumb.classList.add("rotate-center");
           tab2.style.zIndex = "20";
           newLeft = rightEdge;
         } else {
           tab2.style.zIndex = "1";
-          thumb.classList.remove("rotate-center");
         }
 
         let counter = 100 - newLeft / 2;
