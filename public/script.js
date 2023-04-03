@@ -1,6 +1,10 @@
 window.onload = (event) => {
+  const galeryHero = document.getElementById("galery-hero");
+  if (galeryHero) {
+    galeryHero.classList.add("is-visible");
+  }
   let options = {
-    threshold: 1.0,
+    threshold: 1,
   };
   let callback = (entries, observer) => {
     entries.forEach((entry) => {
@@ -8,6 +12,9 @@ window.onload = (event) => {
         entry.target.classList.add("is-visible");
       } else {
         entry.target.classList.remove("is-visible");
+      }
+      if (entry.isIntersecting) {
+        observer.unobserve(entry.target);
       }
     });
   };
