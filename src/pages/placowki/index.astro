@@ -81,7 +81,10 @@ const places = [
               type="submit">Szukaj</button
             >
           </div>
-          <div id="filters-action" class="flex justify-between mt-4 mb-4">
+          <div
+            id="filters-action"
+            class="flex justify-between mt-4 mb-4 active"
+          >
             <button id="filters-open" class="flex items-center" type="button">
               <span class="text-xl">Kategorie</span>
               <span
@@ -136,14 +139,14 @@ const places = [
               </span>
             </button>
           </div>
-          <div class="flex flex-wrap gap-4 filter-box">
+          <div class="flex flex-wrap gap-4 filter-box open">
             <label
-              class="w-full md:w-auto pl-10 h-[66px] py-5 pr-16 bg-primary-100 focus:bg-primary-500 border border-primary-400 focus:outline-none rounded-xl block relative cursor-pointer"
+              class="w-full md:w-auto pl-10 h-[66px] py-5 pr-16 bg-primary-100 focus:bg-primary-500 border border-primary-400 focus:outline-none rounded-xl flex items-center relative cursor-pointer"
             >
               <input
                 type="checkbox"
                 name="przedszkola"
-                class="opacity-0 peer"
+                class="opacity-0 peer absolute"
               />
               <span
                 class="bg-primary-200 absolute inset-0 opacity-0 z-10 peer-checked:opacity-100 rounded-xl transition duration-300 ease-morph"
@@ -176,38 +179,15 @@ const places = [
                   </g>
                 </svg>
               </span>
-              <!--   <span
-                class="opacity-0 peer-checked:opacity-100 absolute right-[20px] z-30"
-                ><svg
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <mask
-                    id="mask0_362_3927"
-                    style="mask-type:alpha"
-                    maskUnits="userSpaceOnUse"
-                    x="0"
-                    y="0"
-                    width="24"
-                    height="24"
-                  >
-                    <rect width="24" height="24" fill="#D9D9D9"></rect>
-                  </mask>
-                  <g mask="url(#mask0_362_3927)">
-                    <path
-                      d="M12.99 20.9095L11.0101 20.9095V12.9899L3.09054 12.9899V11.0101L11.0101 11.0101V3.09045L12.99 3.09045L12.99 11.0101H20.9096V12.9899H12.99L12.99 20.9095Z"
-                      fill="#094F0C"></path>
-                  </g>
-                </svg>
-              </span> -->
             </label>
             <label
-              class="w-full md:w-auto h-[66px] pl-10 py-5 pr-16 bg-primary-100 focus:bg-primary-500 border border-primary-400 focus:outline-none rounded-xl block relative cursor-pointer"
+              class="w-full md:w-auto h-[66px] pl-10 py-5 pr-16 bg-primary-100 focus:bg-primary-500 border border-primary-400 focus:outline-none rounded-xl flex items-center relative cursor-pointer"
             >
-              <input type="checkbox" name="ground" class="opacity-0 peer" />
+              <input
+                type="checkbox"
+                name="ground"
+                class="opacity-0 peer absolute"
+              />
               <span
                 class="bg-primary-200 absolute inset-0 opacity-0 z-10 peer-checked:opacity-100 rounded-xl transition duration-300 ease-morph"
               ></span>
@@ -241,12 +221,12 @@ const places = [
               </span>
             </label>
             <label
-              class="w-full md:w-auto h-[66px] pl-10 py-5 pr-16 bg-primary-100 focus:bg-primary-500 border border-primary-400 focus:outline-none rounded-xl block relative cursor-pointer"
+              class="w-full md:w-auto h-[66px] pl-10 py-5 pr-16 bg-primary-100 focus:bg-primary-500 border border-primary-400 focus:outline-none rounded-xl flex items-center relative cursor-pointer"
             >
               <input
                 type="checkbox"
                 name="integrations"
-                class="opacity-0 peer"
+                class="opacity-0 peer absolute"
               />
               <span
                 class="bg-primary-200 absolute inset-0 opacity-0 z-10 peer-checked:opacity-100 rounded-xl transition duration-300 ease-morph"
@@ -281,9 +261,13 @@ const places = [
               </span>
             </label>
             <label
-              class="w-full md:w-auto h-[66px] pl-10 py-5 pr-16 bg-primary-100 focus:bg-primary-500 border border-primary-400 focus:outline-none rounded-xl block relative cursor-pointer"
+              class="w-full md:w-auto h-[66px] pl-10 py-5 pr-16 bg-primary-100 focus:bg-primary-500 border border-primary-400 focus:outline-none rounded-xl flex items-center relative cursor-pointer"
             >
-              <input type="checkbox" name="infants" class="opacity-0 peer" />
+              <input
+                type="checkbox"
+                name="infants"
+                class="opacity-0 peer absolute"
+              />
               <span
                 class="bg-primary-200 absolute inset-0 opacity-0 z-10 peer-checked:opacity-100 rounded-xl transition duration-300 ease-morph"
               ></span>

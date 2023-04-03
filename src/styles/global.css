@@ -445,23 +445,22 @@ h5 {
 }
 
 .filter-box {
-  height: 0;
   overflow: hidden;
   transition-duration: 0.3s;
   transition-timing-function: "cubic-bezier(0.53, 0.00, 0.43, 1.00)";
   transition: "height";
 }
 .filter-box.open {
-  height: 395px;
+  /* height: 395px; */
 }
 @media (min-width: 629px) {
   .filter-box.open {
-    height: 399px;
+    /* height: 399px; */
   }
 }
 @media (min-width: 868px) {
   .filter-box.open {
-    height: 148px;
+    /* height: 148px; */
   }
 }
 #filters-action.active #filters-open svg {
@@ -691,11 +690,10 @@ h5 {
 .pulse:hover {
   animation: 0ms;
 }
-input[type="checkbox"]:checked {
+input[type="checkbox"].custom-checkbox:checked {
   background-color: #c2f291;
-  position: relative;
 }
-input[type="checkbox"] {
+input[type="checkbox"].custom-checkbox {
   width: 24px;
   height: 24px;
   border: 1px solid #094f0c;
@@ -705,15 +703,23 @@ input[type="checkbox"] {
   appearance: none;
   background: #fff;
   cursor: pointer;
+  transition: all cubic-bezier(0.53, 0, 0.43, 1) 300ms;
+  position: relative;
 }
-
-input[type="checkbox"]:checked:before {
+input[type="checkbox"].custom-checkbox:before {
   content: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTgiIGhlaWdodD0iMTMiIHZpZXdCb3g9IjAgMCAxOCAxMyIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTYuNTQ5NjEgMTIuNDIxTDAuODQ5NjA5IDYuNzIxTDIuMjc0NjEgNS4yOTZMNi41NDk2MSA5LjU3MUwxNS43MjQ2IDAuMzk1OTk2TDE3LjE0OTYgMS44MjFMNi41NDk2MSAxMi40MjFaIiBmaWxsPSIjMDk0RjBDIi8+Cjwvc3ZnPgo=");
   text-align: center;
   padding: 0px;
   position: absolute;
   top: 0;
-  left: 2px;
+  bottom: 0;
+  left: 0px;
+  right: 0px;
+  opacity: 0;
+  transition: opacity cubic-bezier(0.53, 0, 0.43, 1) 300ms;
+}
+input[type="checkbox"].custom-checkbox:checked:before {
+  opacity: 1;
 }
 
 @media (min-width: 1920px) {

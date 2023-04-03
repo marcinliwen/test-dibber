@@ -1,0 +1,228 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+import Meeting from "../../components/Meeting.astro";
+import Breadcrump from "../../components/Breadcrump.astro";
+
+const posts = [
+  {
+    name: "Odporność dzieci - jak ją budować?",
+    img: "/assets/postImage.png",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Lorem ipsum dolor sit amet, consectetur adipiscing elit. ",
+    link: "/blog/post",
+  },
+  {
+    name: "Odporność dzieci - jak ją budować?",
+    img: "/assets/postImage.png",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Lorem ipsum dolor sit amet, consectetur adipiscing elit. ",
+    link: "/blog/post",
+  },
+  {
+    name: "Odporność dzieci - jak ją budować?",
+    img: "/assets/postImage.png",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Lorem ipsum dolor sit amet, consectetur adipiscing elit. ",
+    link: "/blog/post",
+  },
+];
+
+const category = [
+  {
+    name: "Kategoria 1",
+  },
+  {
+    name: "Kategoria 2",
+  },
+  {
+    name: "Kategoria 3",
+  },
+];
+---
+
+<Layout title="Welcome to Astro.">
+  <Header />
+  <Breadcrump
+    breadcrumps={[
+      {
+        name: "Blog",
+        link: "/blog",
+      },
+    ]}
+  />
+  <section class="bg-secondary-200 rounded-t-r_20 pt-[74px] pb-[126px]">
+    <div class="wrapper">
+      <div class="max-w-[875px] mx-auto">
+        <div class="w-full py-[10px] bg-primary-700 rounded-r_20 mb-8">
+          <h2>Blog Dibber</h2>
+        </div>
+        <h3 class="mb-8">Wpisz , czego szukasz</h3>
+        <form id="filters">
+          <div class="md:flex gap-4">
+            <input
+              type="text"
+              placeholder="Czego szukasz"
+              class="mb-5 md:mb-0 w-full py-[22px] pr-[31px] pl-[39px] rounded-lg border border-primary-400 placeholder-primary-400 bg-primary-100 focus:bg-primary-500 focus:outline-none"
+            />
+            <button
+              class="!mr-0 md:mr-auto btn bg-primary-200 hover:bg-primary-400 hover:text-primary-200 w-full md:w-auto mt-4 md:mt-0"
+              type="submit">Szukaj</button
+            >
+          </div>
+          <div
+            id="filters-action"
+            class="flex justify-between mt-4 mb-4 active"
+          >
+            <button id="filters-open" class="flex items-center" type="button">
+              <span class="text-xl">Kategorie</span>
+              <span
+                ><svg
+                  width="24"
+                  height="25"
+                  viewBox="0 0 24 25"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M5 10.8567L6.2425 9.5L12 15.7866L17.7575 9.5L19 10.8567L12 18.5L5 10.8567Z"
+                    fill="#094F0C"></path>
+                </svg>
+              </span>
+            </button>
+            <button
+              id="clear-filters"
+              class="flex hover:bg-primary-200 transition duration-300 ease-morph rounded-xl py-1 px-2 active:bg-transparent"
+              type="button"
+            >
+              <span class="text-base">Wyczyść filtry</span><span
+                ><svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <mask
+                    id="mask0_168_13059"
+                    style="mask-type:alpha"
+                    maskUnits="userSpaceOnUse"
+                    x="0"
+                    y="0"
+                    width="24"
+                    height="24"
+                  >
+                    <rect
+                      x="24"
+                      width="24"
+                      height="24"
+                      transform="rotate(90 24 0)"
+                      fill="#D9D9D9"></rect>
+                  </mask>
+                  <g mask="url(#mask0_168_13059)">
+                    <path
+                      d="M5 6.4L6.4 5L12 10.6L17.6 5L19 6.4L13.4 12L19 17.6L17.6 19L12 13.4L6.4 19L5 17.6L10.6 12L5 6.4Z"
+                      fill="#094F0C"></path>
+                  </g>
+                </svg>
+              </span>
+            </button>
+          </div>
+          <div class="flex flex-wrap gap-4 filter-box open">
+            {
+              category &&
+                category.map((item) => (
+                  <label class="w-full md:w-auto h-[66px] pl-10 py-5 pr-16 bg-primary-100 focus:bg-primary-500 border border-primary-400 focus:outline-none rounded-xl flex items-center relative cursor-pointer">
+                    <input
+                      type="checkbox"
+                      name="ground"
+                      class="opacity-0 peer absolute"
+                    />
+                    <span class="bg-primary-200 absolute inset-0 opacity-0 z-10 peer-checked:opacity-100 rounded-xl transition duration-300 ease-morph" />
+                    <span class="relative z-20">{item.name}</span>
+                    <span class="opacity-100 peer-checked:rotate-45 absolute right-[20px] z-30 transition duration-300 ease-morph">
+                      <svg
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <mask
+                          id="mask0_362_1515"
+                          style="mask-type:alpha"
+                          maskUnits="userSpaceOnUse"
+                          x="0"
+                          y="0"
+                          width="24"
+                          height="24"
+                        >
+                          <rect width="24" height="24" fill="#D9D9D9" />
+                        </mask>
+                        <g mask="url(#mask0_362_1515)">
+                          <path
+                            d="M6.4 19L5 17.6L10.6 12L5 6.4L6.4 5L12 10.6L17.6 5L19 6.4L13.4 12L19 17.6L17.6 19L12 13.4L6.4 19Z"
+                            fill="#094F0C"
+                          />
+                        </g>
+                      </svg>
+                    </span>
+                  </label>
+                ))
+            }
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+  <section
+    class="pt-[56px] pb-[110px] bg-primary-100 -mt-[48px] rounded-t-r_20"
+  >
+    <div class="wrapper">
+      <div class="bidder-container">
+        <div class="grid gap-y-14">
+          {
+            posts &&
+              posts.map((item, index) => {
+                return (
+                  <div
+                    class={`grid md:flex gap-x-14 ${
+                      index % 2 === 0 ? "" : "flex-row-reverse"
+                    }`}
+                  >
+                    <div class="md:w-1/2 mb-4 md:mb-0">
+                      <img
+                        src={item.img}
+                        alt={item.name}
+                        width="542"
+                        height="364"
+                        class={`rounded-r_20 w-full`}
+                      />
+                    </div>
+                    <div class={`md:w-1/2 flex flex-col justify-center `}>
+                      <div class="flex gap-5 mb-4 items-center">
+                        <h5>{item.name}</h5>
+                      </div>
+                      <p class="text-lg font-medium mb-8 max-w-[564px]">
+                        {item.description}
+                      </p>
+                      <a
+                        href={item.link}
+                        class="btn primary max-w-max !p-5 !ml-0"
+                      >
+                        Czytaj więcej
+                      </a>
+                    </div>
+                  </div>
+                );
+              })
+          }
+        </div>
+      </div>
+    </div>
+  </section>
+  <Footer />
+</Layout>
+
+<script is:inline src="/script.js"></script>

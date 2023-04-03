@@ -418,11 +418,21 @@ window.onload = (event) => {
   const filtersAction = document.getElementById("filters-action");
   const filterBox = document.querySelector(".filter-box");
   const clearFilters = document.getElementById("clear-filters");
+  const filterBoxHeight = filterBox.offsetHeight;
 
   if (filtersOpenBtn) {
+    filterBox.style.height = filterBoxHeight + "px";
     filtersOpenBtn.addEventListener("click", () => {
-      filtersAction.classList.toggle("active");
-      filterBox.classList.toggle("open");
+      if (filterBox.classList.contains("open")) {
+        filterBox.style.height = "0px";
+        filterBox.classList.remove("open");
+        filtersAction.classList.add("active");
+      } else {
+        filterBox.classList.add("open");
+        filtersAction.classList.add("active");
+
+        filterBox.style.height = filterBoxHeight + "px";
+      }
     });
   }
   const childAge = document.querySelector(".child-age");
@@ -451,7 +461,9 @@ window.onload = (event) => {
   if (clearFilters) {
     clearFilters.addEventListener("click", () => {
       let input = document.getElementById("child-age");
-      input.value = 0;
+      if (input) {
+        input.value = 0;
+      }
       var filters = document.querySelectorAll(
         '#filters input[type="checkbox"]'
       );
