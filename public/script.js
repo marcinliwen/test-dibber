@@ -483,6 +483,9 @@ window.onload = (event) => {
 
     const screen = window.innerWidth;
     const defaultPoints = screen < 768 ? [-150, 150] : [-200, 150];
+    let mapPopupPosition =
+      screen < 768 ? mapPopupPositionMobile : mapPopupPositionDesktop;
+
     customMarker
       .bindPopup(customPopup, {
         minWidth: 255,

@@ -403,6 +403,15 @@ h5 {
 .details .leaflet-popup-pane {
   z-index: 550;
 }
+#map .leaflet-popup-content p {
+  margin: 0;
+}
+.leaflet-container a.leaflet-popup-close-button {
+  display: none;
+}
+#map {
+  z-index: 1;
+}
 @media (min-width: 1024px) {
   .customPopup {
     width: 317px;
@@ -415,9 +424,10 @@ h5 {
   .details .leaflet-popup-content-wrapper {
     width: 317px;
   }
-  .leaflet-container a.leaflet-popup-close-button {
-    top: 8px;
-    right: 8px;
+
+  .details.leaflet-container a.leaflet-popup-close-button {
+    top: 0px !important;
+    right: 0px !important;
   }
 }
 .nav-btn {
@@ -678,4 +688,10 @@ input[type="checkbox"]:checked:before {
   position: absolute;
   top: 0;
   left: 2px;
+}
+
+@media (min-width: 1920px) {
+  .hd-icons {
+    justify-content: center;
+  }
 }
