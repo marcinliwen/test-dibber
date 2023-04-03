@@ -463,13 +463,21 @@ h5 {
     /* height: 148px; */
   }
 }
-#filters-action.active #filters-open svg {
+#filters-action #filters-open svg {
   -moz-transform: scaleY(-1); /* Gecko */
   -o-transform: scaleY(-1); /* Opera */
   -webkit-transform: scaleY(-1); /* Webkit */
   transform: scaleY(-1); /* Standard */
   transition-duration: 300ms;
-  transition-timing-function: "cubic-bezier(0.53, 0.00, 0.43, 1.00)";
+  transition-timing-function: cubic-bezier(0.53, 0, 0.43, 1);
+}
+#filters-action.active #filters-open svg {
+  -moz-transform: scaleY(1); /* Gecko */
+  -o-transform: scaleY(1); /* Opera */
+  -webkit-transform: scaleY(1); /* Webkit */
+  transform: scaleY(1); /* Standard */
+  transition-duration: 300ms;
+  transition-timing-function: cubic-bezier(0.53, 0, 0.43, 1);
 }
 .swiper .title {
   transform: translateX(-20%);

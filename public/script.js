@@ -426,7 +426,7 @@ window.onload = (event) => {
       if (filterBox.classList.contains("open")) {
         filterBox.style.height = "0px";
         filterBox.classList.remove("open");
-        filtersAction.classList.add("active");
+        filtersAction.classList.remove("active");
       } else {
         filterBox.classList.add("open");
         filtersAction.classList.add("active");
