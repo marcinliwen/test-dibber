@@ -28,6 +28,11 @@ window.onload = (event) => {
     postVisible.classList.add("is-visible");
   }
 
+  const slideLeft = document.querySelector(".slide-left");
+  if (slideLeft) {
+    slideLeft.classList.add("is-visible");
+  }
+
   let slider = document.querySelector(".slide-move");
   if (slider && slider.getBoundingClientRect().height > 96) {
     let thumb = slider.querySelector(".thumb");
