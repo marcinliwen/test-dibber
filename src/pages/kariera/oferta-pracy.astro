@@ -1,0 +1,23 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+import Breadcrump from "../../components/Breadcrump.astro";
+---
+
+<Layout title="Kariera">
+  <Header />
+  <Breadcrump
+    breadcrumps={[
+      {
+        name: "Kariera",
+        link: "/kariera",
+      },
+      {
+        name: "Oferta pracy",
+        link: "/oferta-pracy",
+      },
+    ]}
+  />
+  <Footer />
+</Layout>
