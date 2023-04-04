@@ -4,7 +4,7 @@ import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import Meeting from "../components/Meeting.astro";
 import Breadcrump from "../components/Breadcrump.astro";
-import HomeGalery from "../components/HomeGalery.astro";
+import GaleryHero from "../components/GaleryHero.astro";
 ---
 
 <Layout title="Galeria zdjęć">
@@ -19,29 +19,7 @@ import HomeGalery from "../components/HomeGalery.astro";
   />
   <section>
     <div class="max-w-[1098px] mx-auto">
-      <div
-        id="galery-hero"
-        class="grid justify-items-center md:grid-cols-3 gap-16 animation-scale"
-      >
-        <img
-          src="/assets/face-3.png"
-          class="svg-pointer-right-mask"
-          width="314"
-          height="314"
-        />
-        <img
-          src="/assets/face-1.png"
-          class="svg-clover-mask"
-          width="314"
-          height="314"
-        />
-        <img
-          src="/assets/face-2.png"
-          class="svg-circle-mask"
-          width="314"
-          height="314"
-        />
-      </div>
+      <GaleryHero />
       <h1 class="text-center text-5xl pt-24 pb-16">Galeria zdjęć</h1>
     </div>
   </section>

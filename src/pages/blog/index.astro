@@ -180,7 +180,7 @@ const category = [
     class="pt-[56px] pb-[110px] bg-primary-100 -mt-[48px] rounded-t-r_20"
   >
     <div class="wrapper">
-      <div class="bidder-container">
+      <div class="max-w-[1152px] mx-auto">
         <div class="grid gap-y-14">
           {
             posts &&
@@ -218,6 +218,59 @@ const category = [
                 );
               })
           }
+        </div>
+        <div class="blog-pagination flex justify-center mt-16">
+          <button
+            class="mr-auto py-2 px-6 bg-primary-200 text-center rounded-full opacity-30"
+            ><svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M12 20L4 12L12 4L13.425 5.4L7.825 11H20V13H7.825L13.425 18.6L12 20Z"
+                fill="#094F0C"></path>
+            </svg>
+          </button>
+          <ul class="flex gap-4 md:gap-8">
+            <li>
+              <a
+                href="/blog"
+                class="w-10 h-10 rounded-full block text-sm font-semibold text-center leading-10 bg-primary-400 text-primary-100"
+                >01.</a
+              >
+            </li>
+            <li>
+              <a
+                href=""
+                class="w-10 h-10 rounded-full block text-sm font-semibold text-center leading-10 hover:bg-primary-200 transition transition-morph duration-300"
+                >...</a
+              >
+            </li>
+            <li>
+              <a
+                href="/blog"
+                class="w-10 h-10 rounded-full block text-sm font-semibold text-center leading-10 hover:bg-primary-200 transition transition-morph duration-300"
+                >03.</a
+              >
+            </li>
+          </ul>
+          <button
+            class="ml-auto py-2 px-6 bg-primary-200 text-center rounded-full"
+            ><svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M12 4L20 12L12 20L10.575 18.6L16.175 13L4 13L4 11L16.175 11L10.575 5.4L12 4Z"
+                fill="#094F0C"></path>
+            </svg>
+          </button>
         </div>
       </div>
     </div>

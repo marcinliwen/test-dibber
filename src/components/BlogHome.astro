@@ -26,9 +26,15 @@ const BlogHome = [
     img: "/assets/blog-home-3.png",
   },
 ];
+
+const { bg } = Astro.props;
 ---
 
-<section class="bg-secondary-300 rounded-t-r_20 py-[50px] blog-roll">
+<section
+  class={`${
+    bg ? bg : "bg-secondary-300"
+  } rounded-t-r_20 pt-[50px] pb-[100px] blog-roll`}
+>
   <div class="wrapper">
     <h2 class="text-2xl md:text-5xl font-bold mb-[40px] text-center">
       Popularne wpisy na naszym blogu

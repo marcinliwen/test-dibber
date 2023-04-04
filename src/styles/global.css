@@ -523,8 +523,8 @@ h5 {
 
 @-webkit-keyframes slide-left {
   0% {
-    -webkit-transform: translateX(100%);
-    transform: translateX(100%);
+    -webkit-transform: translateX(-100%);
+    transform: translateX(-100%);
   }
   100% {
     -webkit-transform: translateX(0);
@@ -533,13 +533,20 @@ h5 {
 }
 @keyframes slide-left {
   0% {
-    -webkit-transform: translateX(100%);
-    transform: translateX(100%);
+    -webkit-transform: translateX(-100%);
+    transform: translateX(-100%);
   }
   100% {
     -webkit-transform: translateX(0);
     transform: translateX(0);
   }
+}
+.slide-left {
+  transform: translateX(-130%);
+}
+.slide-left.is-visible {
+  transform: translateX(0);
+  transition: all 600ms cubic-bezier(0.53, 0, 0.43, 1) 400ms;
 }
 .slide-right {
   -webkit-transform: translateX(100%);

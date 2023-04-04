@@ -1,0 +1,124 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+import Meeting from "../../components/Meeting.astro";
+import Breadcrump from "../../components/Breadcrump.astro";
+import Newsletter from "../../components/Newsletter.astro";
+import BlogHome from "../../components/BlogHome.astro";
+import GaleryHero from "../../components/GaleryHero.astro";
+---
+
+<Layout title="Post">
+  <Header />
+  <section class="relative">
+    <img
+      src="/assets/post-cover.jpeg"
+      class="rounded-t-r_20 w-full h-[calc(100vh_-_144px)] object-cover"
+    />
+    <div
+      id="post-visible"
+      class="absolute bg-primary-200 rounded-r_20 z-10 bottom-24 p-12 left-7 right-7 md:right-auto md:left-14 max-w-[538px] slide-left"
+    >
+      <h1 class="text-3xl mb-16">Lorem ipsum tytuł wpisu lub zajawka</h1>
+      <p class="text-lg">Dibbler driven by Heart</p>
+    </div>
+  </section>
+
+  <section
+    class="rounded-t-r_20 bg-primary-100 pt-28 pb-28 -mt-12 relative z-10"
+  >
+    <div class="wrapper">
+      <div class="max-w-[855px] mx-auto">
+        <h3 class="mb-16">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
+          vulputate libero et velit interdum, ac aliquet odio mattis. Class
+          aptent taciti sociosqu ad litora torquent per conubia nostra, per
+          inceptos himenaeos. Lorem ipsum dolor sit amet, consectetur adipiscing
+          elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis.
+        </h3>
+        <p class="mb-10">
+          Vorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu
+          turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus nec
+          fringilla accumsan, risus sem sollicitudin lacus, ut interdum tellus
+          elit sed risus. Maecenas eget condimentum velit, sit amet feugiat
+          lectus. Class aptent taciti sociosqu ad litora torquent per conubia
+          nostra, per inceptos himenaeos. Praesent auctor purus luctus enim
+          egestas, ac scelerisque ante pulvinar. Donec ut rhoncus ex.
+          Suspendisse ac rhoncus nisl, eu tempor urna. Curabitur vel bibendum
+          lorem. Morbi convallis convallis diam sit amet lacinia. Aliquam in
+          elementum tellus. Curabitur tempor quis eros tempus lacinia. Nam
+          bibendum pellentesque quam a convallis. Sed ut vulputate nisi. Integer
+          in felis sed leo vestibulum venenatis. Suspendisse quis arcu sem.
+          Aenean feugiat ex eu vestibulum vestibulum. Morbi a eleifend magna.
+          Nam metus lacus, porttitor eu mauris a, blandit ultrices nibh. Mauris
+          sit amet magna non ligula vestibulum eleifend. Nulla varius volutpat
+          turpis sed lacinia. Nam eget mi in purus lobortis eleifend. Sed nec
+          ante dictum sem condimentum ullamcorper quis venenatis nisi. Proin
+          vitae facilisis nisi, ac posuere leo.
+        </p>
+        <div
+          class="bg-primary-200 p-8 md:p-16 grid md:flex gap-8 rounded-r_20 mb-14"
+        >
+          <h5 class="md:min-w-[280px]">
+            Dibber zatrudnia ponad 9000 pracowników na całym swiecie. Lorem
+            ipsum.
+          </h5>
+          <p class="leading-8">
+            Vorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu
+            turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus
+            nec fringilla accumsan, risus sem sollicitudin lacus, ut interdum
+            tellus elit sed risus.
+          </p>
+        </div>
+        <p class="mb-10">
+          Vorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu
+          turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus nec
+          fringilla accumsan, risus sem sollicitudin lacus, ut interdum tellus
+          elit sed risus. Maecenas eget condimentum velit, sit amet feugiat
+          lectus. Class aptent taciti sociosqu ad litora torquent per conubia
+          nostra, per inceptos himenaeos. Praesent auctor purus luctus enim
+          egestas, ac scelerisque ante pulvinar. Donec ut rhoncus ex.
+          Suspendisse ac rhoncus nisl, eu tempor urna. Curabitur vel bibendum
+          lorem. Morbi convallis convallis diam sit amet lacinia. Aliquam in
+          elementum tellus. Curabitur tempor quis eros tempus lacinia. Nam
+          bibendum pellentesque quam a convallis. Sed ut vulputate nisi. Integer
+          in felis sed leo vestibulum venenatis. Suspendisse quis arcu sem.
+          Aenean feugiat ex eu vestibulum vestibulum. Morbi a eleifend magna.
+          Nam metus lacus, porttitor eu mauris a, blandit ultrices nibh. Mauris
+          sit amet magna non ligula vestibulum eleifend. Nulla varius volutpat
+          turpis sed lacinia. Nam eget mi in purus lobortis eleifend. Sed nec
+          ante dictum sem condimentum ullamcorper quis venenatis nisi. Proin
+          vitae facilisis nisi, ac posuere leo. Aenean feugiat ex eu vestibulum
+          vestibulum. Morbi a eleifend magna. Nam metus lacus, porttitor eu
+          mauris a, blandit ultrices nibh. Mauris sit amet magna non ligula
+          vestibulum eleifend. Nulla varius volutpat turpis sed lacinia. Nam
+          eget mi in purus lobortis eleifend. Sed nec ante dictum sem
+          condimentum ullamcorper quis venenatis nisi. Proin vitae facilisis
+          nisi, ac posuere leo.
+        </p>
+      </div>
+    </div>
+  </section>
+  <section class="bg-primary-200/30 pt-16 pb-28 rounded-t-r_20">
+    <div class="max-w-[1098px] mx-auto">
+      <GaleryHero />
+    </div>
+  </section>
+  <Meeting top_cover={true} />
+  <BlogHome bg={"bg-primary-100"} />
+  <Newsletter />
+  <Footer />
+</Layout>
+
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
+/>
+
+<link rel="stylesheet" href="/slider.css" />
+<script
+  is:inline
+  src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"
+></script>
+<script is:inline src="/script.js"></script>

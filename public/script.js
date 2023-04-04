@@ -23,6 +23,10 @@ window.onload = (event) => {
   if (target) {
     observer.observe(target);
   }
+  const postVisible = document.getElementById("post-visible");
+  if (postVisible) {
+    postVisible.classList.add("is-visible");
+  }
 
   let slider = document.querySelector(".slide-move");
   if (slider && slider.getBoundingClientRect().height > 96) {
@@ -418,9 +422,9 @@ window.onload = (event) => {
   const filtersAction = document.getElementById("filters-action");
   const filterBox = document.querySelector(".filter-box");
   const clearFilters = document.getElementById("clear-filters");
-  const filterBoxHeight = filterBox.offsetHeight;
 
   if (filtersOpenBtn) {
+    const filterBoxHeight = filterBox.offsetHeight;
     filterBox.style.height = filterBoxHeight + "px";
     filtersOpenBtn.addEventListener("click", () => {
       if (filterBox.classList.contains("open")) {
