@@ -1,7 +1,12 @@
 ---
+const { isRounded } = Astro.props;
 ---
 
-<section class="pt-[85px] pb-[122px]">
+<section
+  class={`pt-[85px] pb-[122px] relative ${
+    isRounded ? "rounded-t-r_20 bg-white -mb-6" : ""
+  }`}
+>
   <div class="wrapper">
     <div class="dibber-container">
       <h2 class="text-left mb-7">Sprawdzona, międzynarodowa edukacja</h2>

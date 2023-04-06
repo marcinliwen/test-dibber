@@ -1,0 +1,186 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import Breadcrump from "../components/Breadcrump.astro";
+---
+
+<Layout title="Dla biznesu">
+  <Header />
+  <Breadcrump
+    breadcrumps={[
+      {
+        name: "Dla biznesu",
+        link: "/dla-biznesu",
+      },
+    ]}
+  />
+  <section>
+    <div class="wrapper">
+      <h1
+        class="text-2xl lg:text-[54px] lg:leading-[64px] font-bold text-left mb-[54px]"
+      >
+        Dla biznesu
+      </h1>
+      <div class="dibber-container">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-[54px]">
+          <div
+            class="rounded-r_20 pt-[26px] pr-[28px] pb-[54px] pl-[34px] bg-secondary-200"
+          >
+            <span class="text-xl md:text-5xl mb-8 font-bold block">01.</span>
+            <p class="text-base md:text-lg">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
+              vulputate libero et velit interdum, ac aliquet odio mattis.
+            </p>
+          </div>
+          <div
+            class="rounded-r_20 pt-[26px] pr-[28px] pb-[54px] pl-[34px] bg-secondary-300"
+          >
+            <span class="text-xl md:text-5xl mb-8 font-bold block">02.</span>
+            <p class="text-base md:text-lg">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
+              vulputate libero et velit interdum, ac aliquet odio mattis.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section>
+    <div class="wrapper">
+      <div class="max-w-[876px] mx-auto pb-20">
+        <div class="grid md:flex gap-8 mb-14">
+          <h5 class="md:min-w-[280px]">
+            Dibber zatrudnia ponad 9000 pracowników na całym swiecie.
+          </h5>
+          <p class="leading-8">
+            Vorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu
+            turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus
+            nec fringilla accumsan, risus sem sollicitudin lacus, ut interdum
+            tellus elit sed risus.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section
+    class="bg-primary-200 pt-16 pb-20 md:pb-[148px] -mb-12 rounded-t-r_20"
+  >
+    <div class="wrapper">
+      <div class="max-w-[1170px] mx-auto">
+        <div id="isVisible" class="grid md:grid-cols-2 animation-scale">
+          <img
+            src="/assets/face-3.png"
+            class="svg-pointer-right-mask mb-8 md:mb-0"
+            width="450"
+            height="450"
+          />
+          <div class="">
+            <h2 class="text-left mb-8">Współpraca</h2>
+            <p class="tetx-left mb-10 text-2xl font-medium">
+              Gorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
+              vulputate libero et velit interdum, ac aliquet odio mattis. Class
+              aptent taciti sociosqu ad litora torquent per conubia nostra, per
+              inceptos himenaeos. Gorem ipsum dolor sit amet, consectetur
+              adipiscing elit. Nunc vulputate libero et velit interdum, ac
+              aliquet odio mattis. Class aptent taciti sociosqu ad litora
+              torquent per conubia nostra, per inceptos himenaeos.
+            </p>
+            <a class="btn primary max-w-min md:!ml-0">Zarezerwuj</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="rounded-t-r_20 -mb-6 pb-28 pt-20 bg-primary-100">
+    <div class="wrapper">
+      <div class="max-w-[881px] mx-auto">
+        <h2 class="mb-8 md:leading-[62px] text-left">
+          Współpraca z deweloperami
+        </h2>
+        <p class="text-2xl font-medium mb-14">
+          Gorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
+          vulputate libero et velit interdum, ac aliquet odio mattis. Class
+          aptent taciti sociosqu ad litora torquent per conubia nostra, per
+          inceptos himenaeos. Gorem ipsum dolor sit amet, consectetur adipiscing
+          elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis.
+          Class aptent taciti sociosqu ad litora torquent per conubia nostra,
+          per inceptos himenaeos.
+        </p>
+        <p class="font-medium leading-8 mb-14">
+          Vorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu
+          turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus nec
+          fringilla accumsan, risus sem sollicitudin lacus, ut interdum tellus
+          elit sed risus. Vorem ipsum dolor sit amet, consectetur adipiscing
+          elit. Etiam eu turpis molestie, dictum est a, mattis tellus.
+        </p>
+        <button class="btn primary min-w-[289px]">Skontaktuj się z nami</button>
+      </div>
+    </div>
+  </section>
+  <section class="rounded-t-r_20 -mb-6 pb-28 pt-20 bg-primary-800">
+    <div class="wrapper">
+      <div class="max-w-[881px] mx-auto">
+        <h2 class="mb-8 md:leading-[62px] text-left">
+          Współpraca z pośrednikami nieruchomości
+        </h2>
+        <p class="text-2xl font-medium mb-14">
+          Gorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
+          vulputate libero et velit interdum, ac aliquet odio mattis. Class
+          aptent taciti sociosqu ad litora torquent per conubia nostra, per
+          inceptos himenaeos.
+        </p>
+        <p class="font-medium leading-8 mb-14">
+          Vorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu
+          turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus nec
+          fringilla accumsan, risus sem sollicitudin lacus, ut interdum tellus
+          elit sed risus. Vorem ipsum dolor sit amet, consectetur adipiscing
+          elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Sed
+          dignissim, metus nec fringilla accumsan, risus sem sollicitudin lacus,
+          ut interdum tellus elit sed risus. Vorem ipsum dolor sit amet,
+          consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a,
+          mattis tellus. Sed dignissim, metus nec fringilla accumsan, risus sem
+          sollicitudin lacus, ut interdum tellus elit sed risus. Vorem ipsum
+          dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie,
+          dictum est a, mattis tellus. Sed dignissim, metus nec fringilla
+          accumsan, risus sem sollicitudin lacus, ut interdum tellus elit sed
+          risus.
+        </p>
+        <button class="btn primary min-w-[289px]">Skontaktuj się z nami</button>
+      </div>
+    </div>
+  </section>
+  <section class="rounded-t-r_20 -mb-6 pb-28 pt-20 bg-primary-100">
+    <div class="wrapper">
+      <div class="max-w-[881px] mx-auto">
+        <h2 class="mb-8 md:leading-[62px] text-left">
+          Chcesz sprzedać przedszkole?
+        </h2>
+        <p class="text-2xl font-medium mb-14">
+          Gorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
+          vulputate libero et velit interdum, ac aliquet odio mattis.
+        </p>
+        <p class="font-medium leading-8 mb-14">
+          Vorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu
+          turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus nec
+          fringilla accumsan, risus sem sollicitudin lacus, ut interdum tellus
+          elit sed risus. Vorem ipsum dolor sit amet, consectetur adipiscing
+          elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Sed
+          dignissim, metus nec fringilla accumsan, risus sem sollicitudin lacus,
+          ut interdum tellus elit sed risus. Vorem ipsum dolor sit amet,
+          consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a,
+          mattis tellus. Sed dignissim, metus nec fringilla accumsan, risus sem
+          sollicitudin lacus, ut interdum tellus elit sed risus. Vorem ipsum
+          dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie,
+          dictum est a, mattis tellus. Sed dignissim, metus nec fringilla
+          accumsan, risus sem sollicitudin lacus, ut interdum tellus elit sed
+          risus.
+        </p>
+        <button class="btn primary min-w-[289px]">Skontaktuj się z nami</button>
+      </div>
+    </div>
+  </section>
+  <Footer />
+</Layout>
+
+<script is:inline src="/script.js"></script>
