@@ -755,3 +755,65 @@ input[type="checkbox"].custom-checkbox:checked:before {
     justify-content: center;
   }
 }
+
+.search-bar {
+  z-index: 999;
+  transform: translateY(-100%);
+  transition: transform 500ms cubic-bezier(0.53, 0, 0.43, 1);
+}
+.search-bar.open {
+  transform: translateY(0);
+  transition: transform 500ms cubic-bezier(0.53, 0, 0.43, 1);
+}
+
+.open-modal:focus + .modal {
+  display: block;
+  position: fixed;
+  width: 500px;
+  height: 300px;
+}
+
+.modal {
+  pointer-events: none;
+  visibility: hidden;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  opacity: 0;
+  z-index: 999;
+  background-color: hsl(var(--nf, var(--n)) / var(--tw-bg-opacity));
+  --tw-bg-opacity: 0.4;
+  transition-duration: 0.2s;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-property: transform, opacity, visibility;
+  overflow-y: hidden;
+  overscroll-behavior: contain;
+}
+
+.modal-toggle:checked + .modal {
+  pointer-events: auto;
+  visibility: visible;
+  opacity: 1;
+}
+.modal-toggle:checked + .modal .modal-box {
+  --tw-translate-y: 0px;
+  --tw-scale-x: 1;
+  --tw-scale-y: 1;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y))
+    rotate(var(--tw-rotate)) skew(var(--tw-skew-x)) skewY(var(--tw-skew-y))
+    scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+select {
+  -moz-appearance: none; /* Firefox */
+  -webkit-appearance: none; /* Safari and Chrome */
+  appearance: none;
+  background-image: url("assets/chevron-down.svg");
+  background-repeat: no-repeat;
+  background-position-x: 98%;
+  background-position-y: 13px;
+}

@@ -177,6 +177,36 @@ window.onload = (event) => {
       });
     });
   }
+
+  const openSearchBarDesctop = document.getElementById("openSearchBar-desktop");
+  const searchBar = document.getElementById("searchBar");
+  const closeSearch = document.querySelector(".close-search");
+  const openSearchBarMobile = document.getElementById("openSearchBar-mobile");
+
+  if (openSearchBarDesctop && searchBar && closeSearch) {
+    openSearchBarDesctop.addEventListener("click", () => {
+      if (!searchBar.classList.contains("open")) {
+        searchBar.classList.add("open");
+      }
+    });
+    closeSearch.addEventListener("click", () => {
+      if (searchBar.classList.contains("open")) {
+        searchBar.classList.remove("open");
+      }
+    });
+  }
+  if (openSearchBarMobile && searchBar && closeSearch) {
+    openSearchBarMobile.addEventListener("click", () => {
+      if (!searchBar.classList.contains("open")) {
+        searchBar.classList.add("open");
+      }
+    });
+    closeSearch.addEventListener("click", () => {
+      if (searchBar.classList.contains("open")) {
+        searchBar.classList.remove("open");
+      }
+    });
+  }
   if (typeof Swiper !== "undefined") {
     new Swiper(".blog-home-swiper", {
       slidesPerView: 1,
