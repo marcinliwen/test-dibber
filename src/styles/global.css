@@ -789,12 +789,14 @@ input[type="checkbox"].custom-checkbox:checked:before {
   background-color: hsl(var(--nf, var(--n)) / var(--tw-bg-opacity));
   --tw-bg-opacity: 0.4;
   transition-duration: 0.2s;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-timing-function: cubic-bezier(0.53, 0, 0.43, 1);
   transition-property: transform, opacity, visibility;
   overflow-y: hidden;
   overscroll-behavior: contain;
 }
-
+.modal-box {
+  height: 100vh;
+}
 .modal-toggle:checked + .modal {
   pointer-events: auto;
   visibility: visible;

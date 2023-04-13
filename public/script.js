@@ -219,6 +219,9 @@ window.onload = (event) => {
     });
   }
 
+  /**
+   * Search Bar
+   */
   const openSearchBarDesctop = document.getElementById("openSearchBar-desktop");
   const searchBar = document.getElementById("searchBar");
   const closeSearch = document.querySelector(".close-search");
