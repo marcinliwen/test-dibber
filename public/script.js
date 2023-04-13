@@ -187,6 +187,7 @@ window.onload = (event) => {
       flatpickr(".flatpickr", {
         altInputClass: "data-picker",
         monthSelectorType: "static",
+        disableMobile: "true",
         nextArrow: `<svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M5.91467 10.09L5.23633 9.46872L8.37964 6.58997L5.23633 3.71122L5.91467 3.08997L9.73633 6.58997L5.91467 10.09Z" fill="#094F0C"/>
         </svg>`,

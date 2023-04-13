@@ -7,6 +7,7 @@ window.onload = () => {
       flatpickr(".flatpickr", {
         altInputClass: "data-picker",
         monthSelectorType: "static",
+        disableMobile: "true",
         onOpen: function () {
           document
             .querySelector(".flatpickr-calendar ")
