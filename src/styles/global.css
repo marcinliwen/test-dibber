@@ -783,6 +783,7 @@ input[type="checkbox"].custom-checkbox:checked:before {
   left: 0;
   display: flex;
   justify-content: center;
+  align-items: center;
   opacity: 0;
   z-index: 999;
   background-color: hsl(var(--nf, var(--n)) / var(--tw-bg-opacity));
@@ -798,6 +799,7 @@ input[type="checkbox"].custom-checkbox:checked:before {
   pointer-events: auto;
   visibility: visible;
   opacity: 1;
+  background: #00000061;
 }
 .modal-toggle:checked + .modal .modal-box {
   --tw-translate-y: 0px;

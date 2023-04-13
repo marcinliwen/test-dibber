@@ -165,6 +165,47 @@ window.onload = (event) => {
     });
   }
 
+  /**
+   * Modal script
+   */
+  const openModals = document.querySelectorAll(".open-modal");
+  if (openModals) {
+    openModals.forEach((item) => {
+      item.addEventListener("click", () => {
+        document.body.classList.add("body-overflow");
+      });
+    });
+  }
+
+  /**
+   * Data Picker
+   */
+  if (typeof flatpickr !== undefined) {
+    const dataPicker = document.querySelector(".flatpickr");
+    if (dataPicker) {
+      flatpickr.localize(pl.Polish);
+      flatpickr(".flatpickr", {
+        altInputClass: "data-picker",
+        monthSelectorType: "static",
+        nextArrow: `<svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M5.91467 10.09L5.23633 9.46872L8.37964 6.58997L5.23633 3.71122L5.91467 3.08997L9.73633 6.58997L5.91467 10.09Z" fill="#094F0C"/>
+        </svg>`,
+        prevArrow: `<svg width="12" height="13" viewBox="0 0 12 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M6.82166 3.08997L7.5 3.71122L4.35669 6.58997L7.5 9.46872L6.82166 10.09L3 6.58997L6.82166 3.08997Z" fill="#094F0C"/>
+        </svg>
+        `,
+        onOpen: function () {
+          document
+            .querySelector(".flatpickr-calendar ")
+            .classList.add("date-picker");
+        },
+        onChange: function (selectedDates, dateStr) {
+          dataPicker.setAttribute("value", dateStr);
+        },
+      });
+    }
+  }
+
   const categoryNavBtns = document.querySelectorAll(".faq-category-nav button");
   const categoryItems = document.querySelectorAll(".category-item");
   if (categoryNavBtns && categoryItems) {
