@@ -54,10 +54,12 @@ import Breadcrump from "../../components/Breadcrump.astro";
       </div>
     </div>
   </section>
-  <section class="relative pb-[113px]">
-    <div class="wrapper">
+  <section
+    class="relative pb-[113px] pt-4 overflow-hidden animation-hero inView"
+  >
+    <div class="wrapper relative">
       <div class="flex flex-col md:flex-row">
-        <div class="relative flex-2">
+        <div class="relative flex-2 w-[296px] lg:w-auto image">
           <img
             src="/assets/filozofia.png"
             class="svg-heart-mask"
@@ -65,12 +67,12 @@ import Breadcrump from "../../components/Breadcrump.astro";
             height="430"
           />
         </div>
-        <div class="md:max-w-[50%] md:-order-1">
+        <div class="md:max-w-[50%] md:-order-1 mt-8 md:mt-0">
           <span
-            class="text-2xl lg:text-[54px] lg:leading-[64px] font-bold block mb-10"
+            class="text-2xl lg:text-[54px] lg:leading-[64px] font-bold block mb-10 title"
             >Dibber International Preschool Lorem ipsum dolor sit amet.</span
           >
-          <p class="text-xl lg:text-2xl">
+          <p class="text-xl lg:text-2xl subtitle">
             Gorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
             vulputate libero et velit interdum, ac aliquet odio mattis. Class
             aptent taciti sociosqu ad litora torquent per conubia nostra, per
@@ -78,19 +80,20 @@ import Breadcrump from "../../components/Breadcrump.astro";
           </p>
         </div>
       </div>
-    </div>
-    <div class="ml-auto hidden lg:block absolute right-0 top-0 -z-10">
-      <svg
-        width="217"
-        height="423"
-        viewBox="0 0 217 423"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          d="M351.91 0.873291H70.8329C32.1548 0.873291 0.799988 32.2489 0.799988 70.9526V352.216C0.799988 390.92 32.1548 422.296 70.8329 422.296H351.91C390.588 422.296 421.943 390.92 421.943 352.216V70.9526C421.943 32.2489 390.588 0.873291 351.91 0.873291Z"
-          fill="#A79B42"></path>
-      </svg>
+      <div class="absolute top-[-14px] right-[-200px] z-[-1] slide-right">
+        <svg
+          width="422"
+          height="414"
+          viewBox="0 0 422 414"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-[264px] lg:h-auto"
+        >
+          <path
+            d="M351.11 0H70.033C31.3548 0 0 30.7604 0 68.7053V344.453C0 382.398 31.3548 413.159 70.033 413.159H351.11C389.788 413.159 421.143 382.398 421.143 344.453V68.7053C421.143 30.7604 389.788 0 351.11 0Z"
+            fill="#A79B42"></path>
+        </svg>
+      </div>
     </div>
   </section>
   <Meeting />

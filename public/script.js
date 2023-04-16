@@ -23,6 +23,13 @@ window.onload = (event) => {
   if (target) {
     observer.observe(target);
   }
+  const inViews = document.querySelectorAll(".inView");
+  if (inViews.length > 0) {
+    inViews.forEach((inView) => {
+      observer.observe(inView);
+    });
+  }
+
   const postVisible = document.getElementById("post-visible");
   if (postVisible) {
     postVisible.classList.add("is-visible");
