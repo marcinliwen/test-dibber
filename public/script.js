@@ -4,7 +4,7 @@ window.onload = (event) => {
     galeryHero.classList.add("is-visible");
   }
   let options = {
-    threshold: 1,
+    threshold: 0.25,
   };
   let callback = (entries, observer) => {
     entries.forEach((entry) => {
