@@ -46,7 +46,7 @@
 }
 @media (min-width: 768px) {
   .swiper-pagination-bullets.swiper-pagination-horizontal.hero-pagination {
-    bottom: 86px;
+    bottom: 32px;
     display: flex;
     justify-content: flex-end;
     width: 50%;
