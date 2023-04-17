@@ -176,18 +176,25 @@ window.onload = (event) => {
    * Modal script
    */
   const openModals = document.querySelectorAll(".open-modal");
-  if (openModals) {
+  const closeModals = document.querySelectorAll(".close-modal");
+  if (openModals.length > 0) {
     openModals.forEach((item) => {
       item.addEventListener("click", () => {
         document.body.classList.add("body-overflow");
       });
     });
   }
-
-  /**
-   * Data Picker
-   */
+  if (closeModals.length > 0) {
+    closeModals.forEach((item) => {
+      item.addEventListener("click", () => {
+        document.body.classList.remove("body-overflow");
+      });
+    });
+  }
   if (typeof flatpickr !== undefined) {
+    /**
+     * Data Picker
+     */
     const dataPicker = document.querySelector(".flatpickr");
     if (dataPicker) {
       flatpickr.localize(pl.Polish);
