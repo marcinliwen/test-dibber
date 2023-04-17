@@ -907,11 +907,11 @@ select {
 .banner-box > svg {
   display: none;
 }
-.banner.open {
+.banner {
   opacity: 1;
   transform: translate(0);
 }
-.banner {
+.banner.hidden {
   opacity: 0;
   transform: translateY(100%);
 }
