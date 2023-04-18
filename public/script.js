@@ -1,4 +1,14 @@
 window.onload = (event) => {
+  /**
+   * Banner
+   */
+  const closeBanner = document.querySelector(".close-banner");
+  const banner = document.querySelector(".banner");
+  if (closeBanner && banner) {
+    closeBanner.addEventListener("click", () => {
+      banner.classList.add("hidden");
+    });
+  }
   const galeryHero = document.getElementById("galery-hero");
   if (galeryHero) {
     galeryHero.classList.add("is-visible");
